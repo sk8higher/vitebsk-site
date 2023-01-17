@@ -1,2 +1,64 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap');
+
+:root {
+  --near-white-text: #fefef5;
+}
+
+body {
+  font-family: 'Rubik', serif, sans-serif !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.container-fluid {
+  padding: 10px 35px;
+}
+
+.bg-teal {
+  background-color: teal !important;
+}
+
+.text-near-white {
+  color: var(--near-white-text) !important;
+}
+
+.resize-carousel {
+  width: 70%;
+}
+
+.carousel-caption-bg {
+  background-color: rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+}
+
+.caption-text-large {
+  font-size: 25px;
+}
+
+.mx-20 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.container-fluid {
+  width: 90% !important;
+}
+
+.text-teal {
+  color: teal;
+}
+
+@media only screen and (min-width: 980px) {
+  .center-cont {
+    width: 60% !important;
+  }
+}
+
+.link-unstyled {
+  color: var(--near-white-text);
+  text-decoration: none;
+}
