@@ -1,10 +1,9 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-teal navbar-dark">
   <div class="container-fluid px-50">
-    <a class="navbar-brand" href="#">
-      <%= image_tag("coat.png", alt: 'Герб Витебска', width: 40, height: 40) %>
-    </a>
+    <%= link_to image_tag("coat.png", alt: 'Герб Витебска', width: 40, height: 40), root_path, class: 'navbar-brand' %>
 
-    <a class="navbar-brand" href="index.html">Витебск - мой город</a>
+    <%= link_to 'Витебск - мой город', root_path, class: 'navbar-brand' %>
+
     <button
       class="navbar-toggler"
       type="button"
