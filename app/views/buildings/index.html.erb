@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Buildings</h1>
+
+<div id="buildings">
+  <% @buildings.each do |building| %>
+    <%= render building %>
+    <p>
+      <%= building.name %>
+      <%= link_to "Show this building", building %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Новая статья о здании", new_building_path %>

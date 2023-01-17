@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @building.name %></h1>
+<p><%= @building.description %></p>
+<%= image_tag @building.photo %>
+
+<div>
+  <%= link_to "Отредактировать статью", edit_building_path(@building) %> |
+  <%= link_to "Вернуться на список зданий", buildings_path %>
+
+  <%= button_to "Удалить эту статью", @building, method: :delete %>
+</div>
