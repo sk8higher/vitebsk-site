@@ -11,8 +11,8 @@
         <%= image_tag building.photo, class: 'card-img-top' %>
         <div class="card-body">
           <h5 class="card-title"><%= building.name %></h5>
-          <p class="card-text"><%= building.description %></p>
-          <a href="#" class="btn btn-primary">Посмотреть</a>
+          <p class="card-text"><%= truncate strip_tags(building.description), length: 100 %></p>
+          <%= link_to 'Посмотреть', building_path(building), class: 'btn btn-primary' %>
         </div>
       </div>
     </div>

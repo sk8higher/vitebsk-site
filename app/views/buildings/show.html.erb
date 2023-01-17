@@ -2,13 +2,15 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h1><%= @building.name %></h1>
-<p><%= @building.description %></p>
-<%= image_tag @building.photo %>
+<div class="container d-flex flex-column align-items-center">
+  <h1><%= @building.name %></h1>
+  <%= image_tag @building.photo, class: 'img-fluid' %>
+  <p class="mt-15"><%= @building.description %></p>
+  <div>
+    <%= link_to "Отредактировать статью", edit_building_path(@building) %> |
+      <%= link_to "Вернуться на список зданий", buildings_path %>
 
-<div>
-  <%= link_to "Отредактировать статью", edit_building_path(@building) %> |
-  <%= link_to "Вернуться на список зданий", buildings_path %>
-
-  <%= button_to "Удалить эту статью", @building, method: :delete %>
+      <%= button_to "Удалить эту статью", @building, method: :delete %>
+  </div>
 </div>
+
