@@ -1,13 +1,15 @@
+<%= render 'shared/header' %>
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Buildings</h1>
+<h1>Здания</h1>
 
 <div id="buildings">
   <% @buildings.each do |building| %>
     <%= render building %>
     <p>
       <%= building.name %>
-      <%= link_to "Show this building", building %>
+      <%= link_to "Показать эту статью", building %>
     </p>
   <% end %>
 </div>
