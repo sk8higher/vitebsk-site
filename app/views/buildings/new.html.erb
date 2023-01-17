@@ -1,11 +1,13 @@
 <%= render 'shared/header' %>
+<div class="container d-flex flex-column align-items-center">
+  <h1 class="text-center my-15">Новая статья про здания</h1>
 
-<h1 class="text-center my-15">Новая статья про здания</h1>
+  <%= render "form", building: @building %>
 
-<%= render "form", building: @building %>
+  <br>
 
-<br>
-
-<div>
-  <%= button_to "Назад", buildings_path, class: 'btn btn-secondary' %>
+  <div>
+    <%= button_to "Назад", buildings_path, class: 'btn btn-secondary' %>
+  </div>
 </div>
+

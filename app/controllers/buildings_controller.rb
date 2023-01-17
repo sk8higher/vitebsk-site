@@ -21,18 +21,16 @@ class BuildingsController < ApplicationController
     if @building.save
       redirect_to building_path(@building)
     else
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @building.errors, status: :unprocessable_entity }
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
     if @building.update(building_params)
-      format.html { redirect_to building_url(@building), notice: 'Building was successfully updated.' }
-      format.json { render :show, status: :ok, location: @building }
+      redirect_to building_path(@building)
+
     else
-      format.html { render :edit, status: :unprocessable_entity }
-      format.json { render json: @building.errors, status: :unprocessable_entity }
+      render :edit, status: :unprocessable_entity
     end
   end
 
