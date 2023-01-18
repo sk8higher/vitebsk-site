@@ -36,7 +36,7 @@ class BuildingsController < ApplicationController
   def destroy
     @building.destroy
 
-    redirect_to buildings_url, notice: 'Building was successfully destroyed.'
+    redirect_to buildings_url, notice: 'Статья была успешно уничтожена.'
   end
 
   private

@@ -20,9 +20,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
+        <% if user_signed_in? %>
+        
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <%= link_to 'Выйти', destroy_user_session_path, data: { 'turbo-method': :delete }, class: 'link-unstyled' %>
         </li>
+        <% end %>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
