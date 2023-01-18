@@ -19,4 +19,6 @@
   <% end %>
 </div>
 
-<%= link_to "Новая статья о здании", new_building_path %>
+<% if can? :manage, @buildings %>
+  <%= link_to "Новая статья о месте", new_building_path, class: 'btn btn-primary' %>
+<% end %>
