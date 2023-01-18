@@ -9,12 +9,12 @@
   <div>
     <% if can? :manage, @building %>
       <div class="d-flex">
-        <%= button_to "Отредактировать статью", edit_building_path(@building), class: 'btn btn-info' %>
-        <%= button_to "Удалить эту статью", @building, method: :delete, class: 'btn btn-danger' %>
+        <%= link_to "Отредактировать статью", edit_building_path(@building), class: 'btn btn-info' %>
+        <%= link_to "Удалить эту статью", @building, data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
 
       </div>
     <% end %>
-    <%= button_to "Вернуться на список зданий", buildings_path, class: 'btn btn-primary' %>
+    <%= link_to "Вернуться на список зданий", buildings_path, class: 'btn btn-primary' %>
   </div>
 </div>
 

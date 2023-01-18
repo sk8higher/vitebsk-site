@@ -28,7 +28,6 @@ class BuildingsController < ApplicationController
   def update
     if @building.update(building_params)
       redirect_to building_path(@building)
-
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,8 +36,7 @@ class BuildingsController < ApplicationController
   def destroy
     @building.destroy
 
-    format.html { redirect_to buildings_url, notice: 'Building was successfully destroyed.' }
-    format.json { head :no_content }
+    redirect_to buildings_url, notice: 'Building was successfully destroyed.'
   end
 
   private
