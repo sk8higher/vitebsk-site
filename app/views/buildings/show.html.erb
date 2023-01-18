@@ -7,10 +7,14 @@
   <%= image_tag @building.photo, class: 'img-fluid' %>
   <p class="mt-15"><%= @building.description %></p>
   <div>
-    <%= link_to "Отредактировать статью", edit_building_path(@building) %> |
-      <%= link_to "Вернуться на список зданий", buildings_path %>
+    <% if can? :manage, @building %>
+      <div class="d-flex">
+        <%= button_to "Отредактировать статью", edit_building_path(@building), class: 'btn btn-info' %>
+        <%= button_to "Удалить эту статью", @building, method: :delete, class: 'btn btn-danger' %>
 
-      <%= button_to "Удалить эту статью", @building, method: :delete %>
+      </div>
+    <% end %>
+    <%= button_to "Вернуться на список зданий", buildings_path, class: 'btn btn-primary' %>
   </div>
 </div>
 
