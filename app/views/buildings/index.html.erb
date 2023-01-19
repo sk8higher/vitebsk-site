@@ -12,7 +12,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= building.name %></h5>
           <p class="card-text"><%= truncate strip_tags(building.description), length: 100 %></p>
-          <%= link_to 'Посмотреть', building_path(building), class: 'btn btn-primary' %>
+          <%= link_to 'Посмотреть', building_path(building), class: 'btn btn-teal-200' %>
         </div>
       </div>
     </div>
@@ -20,5 +20,11 @@
 </div>
 
 <% if can? :manage, @buildings %>
-  <%= link_to "Новая статья о месте", new_building_path, class: 'btn btn-primary' %>
+  <div class="container mt-30">
+    <div class="row">
+      <div class="col text-center">
+        <%= link_to "Новая статья о месте", new_building_path, class: 'btn btn-teal' %>
+      </div>
+    </div>
+  </div>
 <% end %>

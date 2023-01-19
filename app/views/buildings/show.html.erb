@@ -8,13 +8,25 @@
   <p class="mt-15"><%= @building.description %></p>
   <div>
     <% if can? :manage, @building %>
-      <div class="d-flex">
-        <%= link_to "Отредактировать статью", edit_building_path(@building), class: 'btn btn-info' %>
-        <%= link_to "Удалить эту статью", @building, data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
+      <div class="container mt-10">
+        <div class="row">
+          <div class="col text-center">
+            <%= link_to "Отредактировать статью", edit_building_path(@building), class: 'btn btn-info' %>
+            <%= link_to "Удалить эту статью", @building, data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
 
+            <%= link_to "Вернуться на список зданий", buildings_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="container mt-10">
+        <div class="row">
+          <div class="col text-center">
+            <%= link_to "Вернуться на список зданий", buildings_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
       </div>
     <% end %>
-    <%= link_to "Вернуться на список зданий", buildings_path, class: 'btn btn-primary' %>
   </div>
 </div>
 

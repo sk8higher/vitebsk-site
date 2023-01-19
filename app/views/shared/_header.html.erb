@@ -18,11 +18,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <%= link_to 'Главная', root_path, class: 'nav-link active link-unstyled' %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'Выйти', destroy_user_session_path, data: { 'turbo-method': :delete }, class: 'link-unstyled' %>
+            <%= link_to 'Выйти', destroy_user_session_path, data: { 'turbo-method': :delete }, class: 'nav-link active link-unstyled' %>
           </li>
         <% end %>
         <li class="nav-item dropdown">

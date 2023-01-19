@@ -79,3 +79,18 @@ body {
 .mt-15 {
   margin-top: 10px;
 }
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+
+.btn-teal {
+  background-color: teal !important;
+  color: white !important;
+}
+
+.btn-teal-200 {
+  background-color: $teal-200 !important;
+  color: black !important;
+}
