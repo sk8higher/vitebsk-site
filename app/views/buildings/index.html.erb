@@ -18,7 +18,7 @@
   <% @buildings.each do |building| %>
   <div class="col">
     <div class="card">
-      <%= image_tag building.photo, class: 'card-img-top' %>
+      <%= image_tag building.photo, width: 800, height: 300, class: 'card-img-top' %>
       <div class="card-body">
         <h5 class="card-title"><%= building.name %></h5>
         <p class="card-text"><%= truncate strip_tags(building.description), length: 100 %></p>
