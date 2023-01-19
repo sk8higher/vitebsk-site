@@ -4,28 +4,31 @@
 
 <h1 class="text-center mb-10">Здания</h1>
 
-<%== pagy_bootstrap_nav(@pagy) %>
+<% if can? :manage, @buildings %>
+<div class="container mt-15 mb-20">
+  <div class="row">
+    <div class="col text-center">
+      <%= link_to "Новая статья о месте", new_building_path, class: 'btn btn-teal' %>
+    </div>
+  </div>
+</div>
+<% end %>
+
 <div id="buildings" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
   <% @buildings.each do |building| %>
-    <div class="col">
-      <div class="card">
-        <%= image_tag building.photo, class: 'card-img-top' %>
-        <div class="card-body">
-          <h5 class="card-title"><%= building.name %></h5>
-          <p class="card-text"><%= truncate strip_tags(building.description), length: 100 %></p>
-          <%= link_to 'Посмотреть', building_path(building), class: 'btn btn-teal-200' %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<% if can? :manage, @buildings %>
-  <div class="container mt-30 mb-20">
-    <div class="row">
-      <div class="col text-center">
-        <%= link_to "Новая статья о месте", new_building_path, class: 'btn btn-teal' %>
+  <div class="col">
+    <div class="card">
+      <%= image_tag building.photo, class: 'card-img-top' %>
+      <div class="card-body">
+        <h5 class="card-title"><%= building.name %></h5>
+        <p class="card-text"><%= truncate strip_tags(building.description), length: 100 %></p>
+        <%= link_to 'Посмотреть', building_path(building), class: 'btn btn-teal-200' %>
       </div>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
+<div class="container d-flex justify-content-center mt-30">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
+
