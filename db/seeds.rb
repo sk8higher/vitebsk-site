@@ -8,9 +8,12 @@
 require 'faker'
 
 10.times do
-  Building.create(
-    name: Faker::Commerce.product_name,
-    description: Faker::Lorem.paragraph(sentence_count: 5),
-    photo: File.open(File.join(Rails.root, 'app/assets/images/image1.png')),
-  )
+  name = Faker::Commerce.product_name
+  description = Faker::Lorem.paragraph(sentence_count: 5)
+
+  building = Building.create(name: name, description: description)
+  file_path = Rails.root.join('app', 'assets', 'images', 'vitebsk-photo.jpg')
+  building.photo.attach(io: File.open(file_path), filename: 'vitebsk-photo.jpg')
+
+  building.save
 end
