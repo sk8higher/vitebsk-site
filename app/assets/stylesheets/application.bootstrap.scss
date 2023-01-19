@@ -106,3 +106,19 @@ body {
   background-color: $teal-200 !important;
   color: black !important;
 }
+
+.page-item.active a {
+  background-color: teal !important;
+  color: white !important;
+}
+.page-item.prev a:not(.disabled), .page-item.next a:not(.disabled) {
+  color: teal !important;
+}
+
+.page-item.prev.disabled a, .page-item.next.disabled a {
+    color: var(--bs-pagination-disabled-color) !important;
+}
+
+[class="page-link"]:not(.active) {
+  color: teal !important;
+}
