@@ -1,4 +1,6 @@
 class Building < ApplicationRecord
+  include Pagy::Backend
+
   has_one_attached :photo
 
   validates :name, presence: true, length: { minimum: 3, maximum: 70 }

@@ -61,6 +61,9 @@ body {
 .link-unstyled {
   color: var(--near-white-text);
   text-decoration: none;
+  &:hover {
+    color: $teal-200;
+  }
 }
 
 .my-15 {

@@ -4,6 +4,7 @@
 
 <h1 class="text-center mb-10">Здания</h1>
 
+<%== pagy_bootstrap_nav(@pagy) %>
 <div id="buildings" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
   <% @buildings.each do |building| %>
     <div class="col">

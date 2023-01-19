@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+10.times do
+  Building.create(
+    name: Faker::Commerce.product_name,
+    description: Faker::Lorem.paragraph(sentence_count: 5),
+    photo: File.open(File.join(Rails.root, 'app/assets/images/image1.png')),
+  )
+end
