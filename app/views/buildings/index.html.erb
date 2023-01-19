@@ -2,7 +2,7 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h1 class="text-center mb-10">Значимые места города</h1>
+<h1 class="text-center m-0">Значимые места города</h1>
 
 <% if can? :manage, @buildings %>
 <div class="container mt-15 mb-20">
@@ -14,7 +14,7 @@
 </div>
 <% end %>
 
-<div id="buildings" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mx-20">
+<div id="buildings" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mx-20 mt-0">
   <% @buildings.each do |building| %>
   <div class="col">
     <div class="card">
