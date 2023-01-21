@@ -25,4 +25,6 @@ require 'faker'
   monument = Monument.create(name: name, description: description)
   file_path = Rails.root.join('app', 'assets', 'images', 'image2.png')
   monument.photo.attach(io: File.open(file_path), filename: 'image2.png')
+
+  monument.save
 end
