@@ -19,7 +19,7 @@ class BuildingsController < ApplicationController
     @building = Building.new(building_params)
 
     if @building.save
-      redirect_to building_path(@building)
+      redirect_to building_path(@building), notice: 'Статья была успешно создана.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class BuildingsController < ApplicationController
 
   def update
     if @building.update(building_params)
-      redirect_to building_path(@building)
+      redirect_to building_path(@building), notice: 'Статья была успешно обновлена.'
     else
       render :edit, status: :unprocessable_entity
     end

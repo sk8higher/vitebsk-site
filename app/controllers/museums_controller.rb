@@ -19,7 +19,7 @@ class MuseumsController < ApplicationController
     @museum = Museum.new(museum_params)
 
     if @museum.save
-      redirect_to museum_path(@museum)
+      redirect_to museum_path(@museum), notice: 'Статья была успешно создана.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class MuseumsController < ApplicationController
 
   def update
     if @museum.update(museum_params)
-      redirect_to museum_path(@museum)
+      redirect_to museum_path(@museum), notice: 'Статья была успешно обновлена.'
     else
       render :edit, status: :unprocessable_entity
     end
