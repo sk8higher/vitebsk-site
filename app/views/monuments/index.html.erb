@@ -1,31 +1,31 @@
 <%= render 'shared/header' %>
 
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
 <h1 class="text-center m-0">Памятники Витебска</h1>
 
 <% if can? :manage, @monuments %>
-<div class="container mt-15 mb-20">
-  <div class="row">
-    <div class="col text-center">
-      <%= link_to "Новая статья о памятнике", new_monument_path, class: 'btn btn-teal' %>
+  <div class="container mt-15 mb-20">
+    <div class="row">
+      <div class="col text-center">
+        <%= link_to "Новая статья о памятнике", new_monument_path, class: 'btn btn-teal' %>
+      </div>
     </div>
   </div>
-</div>
 <% end %>
 
 <div id="monuments" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mx-20 mt-0">
   <% @monuments.each do |monument| %>
-  <div class="col">
-    <div class="card">
-      <%= image_tag monument.photo, width: '40%', height: '20%', class: 'card-img-top' %>
-      <div class="card-body">
-        <h5 class="card-title"><%= monument.name %></h5>
-        <p class="card-text"><%= truncate strip_tags(monument.description), length: 100 %></p>
-        <%= link_to 'Посмотреть', monument_path(monument), class: 'btn btn-teal-200' %>
+    <div class="col">
+      <div class="card">
+        <%= image_tag monument.photo, width: '40%', height: '20%', class: 'card-img-top' %>
+        <div class="card-body">
+          <h5 class="card-title"><%= monument.name %></h5>
+          <p class="card-text"><%= truncate strip_tags(monument.description), length: 100 %></p>
+          <%= link_to 'Посмотреть', monument_path(monument), class: 'btn btn-teal-200' %>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
 </div>
 <div class="container d-flex justify-content-center mt-30">
