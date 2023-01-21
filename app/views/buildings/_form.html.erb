@@ -13,17 +13,17 @@
   <fieldset class="my-30">
     <div class="form-group row mb-15">
       <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.text_field :name, class: 'form-control' %>
     </div> 
 
     <div class="form-group row mb-15">
       <%= form.label :description %>
-      <%= form.text_area :description, rows: 10 %>
+      <%= form.text_area :description, rows: 10, class: 'form-control' %>
     </div>
 
     <div class="form-group row mb-15">
       <%= form.label :photo %>
-      <%= form.file_field :photo %>
+      <%= form.file_field :photo, class: 'form-control-file' %>
     </div>
 
     <div class="container mt-10 mb-15">
