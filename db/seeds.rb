@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+# Create random Buildings
 # 10.times do
 # name = Faker::Commerce.product_name
 # description = Faker::Lorem.paragraph(sentence_count: 5)
@@ -18,13 +19,26 @@ require 'faker'
 # building.save
 # end
 
+# Create random Monuments
+# 15.times do
+# name = Faker::Commerce.product_name
+# description = Faker::Lorem.paragraph(sentence_count: 5)
+
+# monument = Monument.create(name: name, description: description)
+# file_path = Rails.root.join('app', 'assets', 'images', 'image2.png')
+# monument.photo.attach(io: File.open(file_path), filename: 'image2.png')
+
+# monument.save
+# end
+
+# Create random Museums
 15.times do
   name = Faker::Commerce.product_name
   description = Faker::Lorem.paragraph(sentence_count: 5)
 
-  monument = Monument.create(name: name, description: description)
-  file_path = Rails.root.join('app', 'assets', 'images', 'image2.png')
-  monument.photo.attach(io: File.open(file_path), filename: 'image2.png')
+  museum = Museum.create(name: name, description: description)
+  file_path = Rails.root.join('app', 'assets', 'images', 'image3.png')
+  museum.photo.attach(io: File.open(file_path), filename: 'image3.png')
 
-  monument.save
+  museum.save
 end
