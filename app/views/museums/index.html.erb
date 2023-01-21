@@ -1,0 +1,34 @@
+<%= render 'shared/header' %>
+
+<p class="notice"><%= notice %></p>
+
+<h1 class="text-center m-0">Музеи Витебска</h1>
+
+<% if can? :manage, @museums %>
+  <div class="container mt-15 mb-20">
+    <div class="row">
+      <div class="col text-center">
+        <%= link_to "Новая статья о музее", new_museum_path, class: 'btn btn-teal' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div id="museums" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mx-20 mt-0">
+  <% @museums.each do |museum| %>
+    <div class="col">
+      <div class="card">
+        <%= image_tag museum.photo, width: '40%', height: '20%', class: 'card-img-top' %>
+        <div class="card-body">
+          <h5 class="card-title"><%= museum.name %></h5>
+          <p class="card-text"><%= truncate strip_tags(museum.description), length: 100 %></p>
+          <%= link_to 'Посмотреть', museum_path(museum), class: 'btn btn-teal-200' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="container d-flex justify-content-center mt-30">
+  <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>
+</div>
+
