@@ -7,13 +7,22 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-10.times do
+# 10.times do
+# name = Faker::Commerce.product_name
+# description = Faker::Lorem.paragraph(sentence_count: 5)
+
+# building = Building.create(name: name, description: description)
+# file_path = Rails.root.join('app', 'assets', 'images', 'vitebsk-photo.jpg')
+# building.photo.attach(io: File.open(file_path), filename: 'vitebsk-photo.jpg')
+
+# building.save
+# end
+
+15.times do
   name = Faker::Commerce.product_name
   description = Faker::Lorem.paragraph(sentence_count: 5)
 
-  building = Building.create(name: name, description: description)
-  file_path = Rails.root.join('app', 'assets', 'images', 'vitebsk-photo.jpg')
-  building.photo.attach(io: File.open(file_path), filename: 'vitebsk-photo.jpg')
-
-  building.save
+  monument = Monument.create(name: name, description: description)
+  file_path = Rails.root.join('app', 'assets', 'images', 'image2.png')
+  monument.photo.attach(io: File.open(file_path), filename: 'image2.png')
 end
