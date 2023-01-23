@@ -1,0 +1,8 @@
+<%= render 'shared/header' %>
+<div class="container d-flex flex-column align-items-center">
+  <h1 class="text-center my-15">Новая статья про известного человека</h1>
+
+  <%= render "form", person: @person, text: 'Создать статью' %>
+  <%= link_to "Назад", people_path, class: 'btn btn-secondary' %>
+</div>
+

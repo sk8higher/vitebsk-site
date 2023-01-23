@@ -32,13 +32,25 @@ require 'faker'
 # end
 
 # Create random Museums
+# 15.times do
+# name = Faker::Commerce.product_name
+# description = Faker::Lorem.paragraph(sentence_count: 5)
+
+# museum = Museum.create(name: name, description: description)
+# file_path = Rails.root.join('app', 'assets', 'images', 'image3.png')
+# museum.photo.attach(io: File.open(file_path), filename: 'image3.png')
+
+# museum.save
+# end
+
+# Create random People
 15.times do
   name = Faker::Commerce.product_name
-  description = Faker::Lorem.paragraph(sentence_count: 5)
+  bio = Faker::Lorem.paragraph(sentence_count: 5)
 
-  museum = Museum.create(name: name, description: description)
-  file_path = Rails.root.join('app', 'assets', 'images', 'image3.png')
-  museum.photo.attach(io: File.open(file_path), filename: 'image3.png')
+  person = Person.create(name: name, bio: bio)
+  file_path = Rails.root.join('app', 'assets', 'images', 'image4.jpg')
+  person.photo.attach(io: File.open(file_path), filename: 'image4.png')
 
-  museum.save
+  person.save
 end

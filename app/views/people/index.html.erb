@@ -29,7 +29,7 @@
         <%= image_tag person.photo, width: '40%', height: '20%', class: 'card-img-top' %>
         <div class="card-body">
           <h5 class="card-title"><%= person.name %></h5>
-          <p class="card-text"><%= truncate strip_tags(person.description), length: 100 %></p>
+          <p class="card-text"><%= truncate strip_tags(person.bio), length: 100 %></p>
           <%= link_to 'Посмотреть', person_path(person), class: 'btn btn-teal-200' %>
         </div>
       </div>
