@@ -1,2 +1,44 @@
-<h1>Artworks#index</h1>
-<p>Find me in app/views/artworks/index.html.erb</p>
+<%= render 'shared/header' %>
+
+<p class="notice"><%= notice %></p>
+
+<h1 class="text-center m-0">Работы <%= @person.name %></h1>
+
+<% if can? :manage, @artworks %>
+  <div class="container mt-15 mb-20">
+    <div class="row">
+      <div class="col text-center">
+        <%= link_to "Добавить работу", new_person_artwork_path, class: 'btn btn-teal' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="container mt-15 mb-20">
+  <div class="row">
+    <div class="col text-center">
+      <%= link_to "На главную", root_path, class: 'btn btn-teal' %>
+    </div>
+  </div>
+</div>
+
+<div id="artworks" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mx-20 mt-0">
+  <% @person.artworks.each do |artwork| %>
+    <div class="col">
+      <div class="card">
+        <% if artwork.photo.any? %>
+          <%= image_tag person.photo, width: '40%', height: '20%', class: 'card-img-top' %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= artwork.title %></h5>
+          <p class="card-text"><%= truncate strip_tags(artwork.descripton), length: 100 %></p>
+          <%= link_to 'Посмотреть', artwork_path(artwork), class: 'btn btn-teal-200' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="container d-flex justify-content-center mt-30">
+  <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>
+</div>
+

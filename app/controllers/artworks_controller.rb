@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+  before_action :get_person
   before_action :set_artwork, only: %i[ show edit update destroy ]
 
   def index
@@ -40,6 +41,10 @@ class ArtworksController < ApplicationController
   end
 
   private
+
+  def get_person
+    @person = Person.find(params[:person_id])
+  end
 
   def set_artwork
     @artwork = Artwork.find(params[:id])
