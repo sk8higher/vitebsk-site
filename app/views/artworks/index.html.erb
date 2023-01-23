@@ -26,13 +26,13 @@
   <% @person.artworks.each do |artwork| %>
     <div class="col">
       <div class="card">
-        <% if artwork.photo.any? %>
-          <%= image_tag person.photo, width: '40%', height: '20%', class: 'card-img-top' %>
+        <% unless artwork.photo.blank? %>
+          <%= image_tag artwork.photo, width: '40%', height: '20%', class: 'card-img-top' %>
         <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= artwork.title %></h5>
-          <p class="card-text"><%= truncate strip_tags(artwork.descripton), length: 100 %></p>
-          <%= link_to 'Посмотреть', artwork_path(artwork), class: 'btn btn-teal-200' %>
+          <p class="card-text"><%= truncate strip_tags(artwork.description), length: 100 %></p>
+          <%= link_to 'Посмотреть', person_artwork_path(@person, artwork), class: 'btn btn-teal-200' %>
         </div>
       </div>
     </div>

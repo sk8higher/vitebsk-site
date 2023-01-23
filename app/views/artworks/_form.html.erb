@@ -1,4 +1,4 @@
-<%= form_with(model: [person, artwork], data: { turbo: false }, class: 'form-width-avg') do |form| %>
+<%= form_with(model: artwork, url: [person, artwork], data: { turbo: false }, class: 'form-width-avg') do |form| %>
   <% if artwork.errors.any? %>
     <div style="color: red">
       <h2>Ошибки:</h2>
