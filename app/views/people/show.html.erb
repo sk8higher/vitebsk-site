@@ -4,7 +4,7 @@
 
 <div class="container d-flex flex-column align-items-center">
   <h1><%= @person.name %></h1>
-  <%= image_tag @person.photo, class: 'img-fluid' %>
+  <%= image_tag @person.photo, class: 'img-fluid img-thumbnail', height: 200 %>
   <p class="mt-15"><%= @person.bio %></p>
   <div>
     <% if can? :manage, @person %>

@@ -4,7 +4,7 @@
 
 <div class="container d-flex flex-column align-items-center">
   <h1><%= @museum.name %></h1>
-  <%= image_tag @museum.photo, class: 'img-fluid' %>
+  <%= image_tag @museum.photo, class: 'img-fluid img-thumbnail' %>
   <p class="mt-15"><%= @museum.description %></p>
   <div>
     <% if can? :manage, @museum %>
