@@ -8,7 +8,7 @@
   <p class="mt-15"><%= @museum.description %></p>
   <div>
     <% if can? :manage, @museum %>
-      <div class="container mt-10">
+      <div class="container mt-10 mb-20">
         <div class="row">
           <div class="col text-center">
             <%= link_to "Отредактировать статью", edit_museum_path(@museum), class: 'btn btn-teal-200' %>

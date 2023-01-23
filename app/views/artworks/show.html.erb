@@ -1,2 +1,9 @@
-<h1>Artworks#show</h1>
-<p>Find me in app/views/artworks/show.html.erb</p>
+<%= render 'shared/header' %>
+
+<p class="notice"><%= notice %></p>
+
+<div class="container d-flex flex-column align-items-center">
+  <h1><%= @artwork.title %></h1>
+  <%= image_tag @artwork.photo, class: 'img-fluid img-thumbnail' %>
+  <p class="mt-15"><%= @artwork.description %></p>
+<div>
