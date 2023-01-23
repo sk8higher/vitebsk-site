@@ -1,2 +1,8 @@
-<h1>Artworks#new</h1>
-<p>Find me in app/views/artworks/new.html.erb</p>
+<%= render 'shared/header' %>
+<div class="container d-flex flex-column align-items-center">
+  <h1 class="text-center my-15">Добавить работу</h1>
+
+  <%= render "form", person: @person, artwork: @artwork, text: 'Добавить работу' %>
+  <%= link_to "Назад", person_artworks_path, class: 'btn btn-secondary' %>
+</div>
+
