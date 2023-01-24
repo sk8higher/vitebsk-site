@@ -9,9 +9,12 @@
 
 body {
   font-family: 'Rubik', serif, sans-serif !important;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: no-repeat center/100% url("backgr.jpg") !important;
   height: 100vh;
+}
+
+.center-cont {
+  background: var(--near-white-text);
 }
 
 .container-fluid {
