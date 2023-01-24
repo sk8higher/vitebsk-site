@@ -14,7 +14,14 @@ body {
 }
 
 .center-cont {
+  margin-top: 30px !important;
+  border-radius: 30px !important;
   background: var(--near-white-text);
+  font-size: 1.25rem !important;
+}
+
+.text-justify {
+  text-align: justify !important;
 }
 
 .container-fluid {
@@ -179,3 +186,6 @@ body {
   }
 }
 
+.blockquote {
+  font-size: 1rem !important;
+}
