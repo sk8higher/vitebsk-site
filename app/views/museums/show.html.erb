@@ -14,7 +14,7 @@
             <%= link_to "Отредактировать статью", edit_museum_path(@museum), class: 'btn btn-teal-200' %>
             <%= link_to "Удалить эту статью", @museum, data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
 
-            <%= link_to "Вернуться на список музеев", museums_path, class: 'btn btn-teal' %>
+            <%= link_to "Назад", museums_path, class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
       <div class="container mt-10 mb-20">
         <div class="row">
           <div class="col text-center">
-            <%= link_to "Вернуться на список музеев", museums_path, class: 'btn btn-teal' %>
+            <%= link_to "Назад", museums_path, class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 <p class="notice"><%= notice %></p>
 
-<h1 class="text-center m-0">Работы <%= @person.name %></h1>
+<h1 class="text-center m-0"><%= @person.name %>: работы</h1>
 
 <% if can? :manage, @artworks %>
   <div class="container mt-15 mb-20">
