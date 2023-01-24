@@ -8,7 +8,7 @@ class Person < ApplicationRecord
   has_one_attached :photo
 
   has_many :taggings
-  has_many :tags, through: :taggings
+  has_one :tag
 
   validates :name, presence: true, length: { minimum: 3, maximum: 70 }
   validates :bio, presence: true, length: { minimum: 5 }
