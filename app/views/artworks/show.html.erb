@@ -4,6 +4,32 @@
 
 <div class="container d-flex flex-column align-items-center">
   <h1><%= @artwork.title %></h1>
-  <%= image_tag @artwork.photo, class: 'img-fluid img-thumbnail' %>
+  <% unless @artwork.photo.blank? %>
+    <%= image_tag @artwork.photo, class: 'img-fluid img-thumbnail' %>
+  <% end %>
   <p class="mt-15"><%= @artwork.description %></p>
-<div>
+  <div>
+    <% if can? :manage, @artwork %>
+      <div class="container mt-10 mb-20">
+        <div class="row">
+          <div class="col text-center">
+            <%= link_to "Отредактировать работу", edit_person_artwork_path(@person, @artwork), class: 'btn btn-teal-200' %>
+            <%= link_to "Удалить работу", person_artwork_path(@person, @artwork), data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
+
+            <%= link_to "Вернуться на список работ", person_artworks_path(@person), class: 'btn btn-teal' %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="container mt-10 mb-20">
+        <div class="row">
+          <div class="col text-center">
+            <%= link_to "Вернуться на список известных людей", people_path, class: 'btn btn-teal' %>
+            <%= link_to 'Показать работы', person_artworks_path(@person), class: 'btn btn-info' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
