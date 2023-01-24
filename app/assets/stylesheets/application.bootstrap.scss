@@ -123,6 +123,11 @@ body {
   color: white !important;
 }
 
+.btn-teal-100 {
+  background-color: $teal-100 !important;
+  color: black !important;
+}
+
 .btn-teal-200 {
   background-color: $teal-200 !important;
   color: black !important;
@@ -131,6 +136,11 @@ body {
 .btn-teal-500 {
   background-color: $teal-500 !important;
   color: black !important;
+}
+
+.btn-teal-700 {
+  background-color: $teal-700 !important;
+  color: white !important;
 }
 
 .page-item.active a {
