@@ -137,7 +137,7 @@ body {
 }
 
 .page-item.prev.disabled a, .page-item.next.disabled a {
-    color: var(--bs-pagination-disabled-color) !important;
+  color: var(--bs-pagination-disabled-color) !important;
 }
 
 [class="page-link"]:not(.active) {
@@ -149,3 +149,15 @@ body {
   text-align: center !important;
   margin-top: 5px !important;
 }
+
+.btn-outline-dark {
+  background-color: white !important;
+  color: black !important;
+  transition: all .5s !important;
+
+  &:hover {
+    background-color: black !important;
+    color: white !important;
+  }
+}
+
