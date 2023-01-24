@@ -2,8 +2,8 @@
 
 one:
   tag: one
-  post: one
+  person: one
 
 two:
   tag: two
-  post: two
+  person: two
