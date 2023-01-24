@@ -3,7 +3,11 @@ class PeopleController < ApplicationController
   before_action :set_tags
 
   def index
-    @pagy, @people = pagy(Person.all.order(created_at: :desc), items: 12)
+    if params[:tag_id]
+      @pagy, @people = pagy(Person.where(tag_id: params[:tag_id]).order(created_at: :desc))
+    else
+      @pagy, @people = pagy(Person.all.order(created_at: :desc), items: 12)
+    end
   end
 
   def show
@@ -51,6 +55,6 @@ class PeopleController < ApplicationController
   end
 
   def person_params
-    params.require(:person).permit(:name, :bio, :photo)
+    params.require(:person).permit(:name, :bio, :photo, :tag_id)
   end
 end

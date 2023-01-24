@@ -18,7 +18,9 @@
   <div class="row">
     <div class="col text-center">
       <%= link_to "На главную", root_path, class: 'btn btn-teal' %>
-      <%= link_to 'Показать художников', {controller: 'people', action: 'index', :tag => 'Художник'}  %>
+      <%= link_to 'Показать художников', { controller: 'people', action: 'index', :tag_id => 1 }, class: 'btn btn-teal'  %>
+      <%= link_to 'Показать поэтов', { controller: 'people', action: 'index', :tag_id => 2 }, class: 'btn btn-teal'  %>
+      <%= link_to 'Показать писателей', { controller: 'people', action: 'index', :tag_id => 3 }, class: 'btn btn-teal'  %>
     </div>
   </div>
 </div>
