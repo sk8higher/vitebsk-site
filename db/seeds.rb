@@ -44,13 +44,18 @@ require 'faker'
 # end
 
 # Create random People
-15.times do
-  name = Faker::Commerce.product_name
-  bio = Faker::Lorem.paragraph(sentence_count: 5)
+# 15.times do
+#   name = Faker::Commerce.product_name
+#   bio = Faker::Lorem.paragraph(sentence_count: 5)
 
-  person = Person.create(name: name, bio: bio)
-  file_path = Rails.root.join('app', 'assets', 'images', 'image4.jpg')
-  person.photo.attach(io: File.open(file_path), filename: 'image4.png')
+#   person = Person.create(name: name, bio: bio)
+#   file_path = Rails.root.join('app', 'assets', 'images', 'image4.jpg')
+#   person.photo.attach(io: File.open(file_path), filename: 'image4.png')
 
-  person.save
-end
+#   person.save
+# end
+
+# Create tags
+Tag.create(name: 'Художник')
+Tag.create(name: 'Поэт')
+Tag.create(name: 'Писатель')
