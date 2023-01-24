@@ -1,6 +1,8 @@
 class Person < ApplicationRecord
   include Pagy::Backend
 
+  scope :tag, lambda { |tag| where('tag = ?', tag) }
+
   has_many :artworks
 
   has_one_attached :photo

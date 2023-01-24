@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[show edit update destroy]
+  before_action :set_tags
 
   def index
     @pagy, @people = pagy(Person.all.order(created_at: :desc), items: 12)
@@ -43,6 +44,10 @@ class PeopleController < ApplicationController
 
   def set_person
     @person = Person.find(params[:id])
+  end
+
+  def set_tags
+    @tags = Tag.all
   end
 
   def person_params
