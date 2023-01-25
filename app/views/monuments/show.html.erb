@@ -3,9 +3,9 @@
 <p class="notice"><%= notice %></p>
 
 <div class="container d-flex flex-column align-items-center">
-  <h1><%= @monument.name %></h1>
+  <h1 class="text-center"><%= @monument.name %></h1>
   <%= image_tag @monument.photo, class: 'img-fluid img-thumbnail' %>
-  <p class="mt-15"><%= @monument.description %></p>
+  <p class="mt-15 text-justify"><%= sanitize @monument.description, tags: %w(strong em a code pre h2 h3 p blockquote ul ol li br) %></p>
   <div>
     <% if can? :manage, @monument %>
       <div class="container mt-10 mb-20">

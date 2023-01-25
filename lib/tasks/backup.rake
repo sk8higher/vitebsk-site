@@ -1,6 +1,6 @@
 namespace :mockdb do
   sqlite_path = "/usr/bin/sqlite3"
-  sql_file = "db/#{Rails.env}.sqlite3"
+  sql_file = "db/production.sqlite3"
 
  desc "Back up the database"
   task :backup => :environment do

@@ -3,11 +3,11 @@
 <p class="notice"><%= notice %></p>
 
 <div class="container d-flex flex-column align-items-center">
-  <h1><%= @artwork.title %></h1>
+  <h1 class="text-center"><%= @artwork.title %></h1>
   <% unless @artwork.photo.blank? %>
     <%= image_tag @artwork.photo, class: 'img-fluid img-thumbnail' %>
   <% end %>
-  <p class="mt-15"><%= @artwork.description %></p>
+  <p class="mt-15 text-justify"><%= sanitize @artwork.description, tags: %w(strong em a code pre h2 h3 p blockquote ul ol li br) %></p>
   <div>
     <% if can? :manage, @artwork %>
       <div class="container mt-10 mb-20">
