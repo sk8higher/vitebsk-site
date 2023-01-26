@@ -15,9 +15,8 @@ body {
 
 .center-cont {
   margin-top: 30px !important;
-  border-radius: 30px !important;
-  background: var(--near-white-text);
   font-size: 1.25rem !important;
+  background-color: white !important;
 }
 
 .text-justify {
@@ -38,11 +37,6 @@ body {
 
 .resize-carousel {
   width: 70%;
-}
-
-.carousel-caption-bg {
-  background-color: rgba(0, 0, 0, 0.47);
-  border-radius: 20px;
 }
 
 .caption-text-large {
