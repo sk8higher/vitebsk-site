@@ -35,8 +35,10 @@ body {
   color: var(--near-white-text) !important;
 }
 
-.resize-carousel {
-  width: 70%;
+.card-img-top {
+  width: 100% !important;
+  height: 15vw !important;
+  object-fit: cover !important;
 }
 
 .caption-text-large {
