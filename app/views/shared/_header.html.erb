@@ -44,7 +44,7 @@
           <li class="nav-item">
             <%= link_to 'Выйти', destroy_user_session_path, data: { 'turbo-method': :delete }, class: 'nav-link active link-unstyled' %>
           </li>
-          <% else %>
+        <% else %>
           <li class="nav-item">
             <%= link_to 'Вход для администратора', new_user_session_path, class: 'nav-link active link-unstyled' %>
           </li>
