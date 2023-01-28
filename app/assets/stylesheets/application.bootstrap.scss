@@ -157,11 +157,11 @@ body {
 }
 
 .page-item.active a {
-  background-color: teal !important;
+  background-color: #4B9FF2 !important;
   color: white !important;
 }
 .page-item.prev a:not(.disabled), .page-item.next a:not(.disabled) {
-  color: teal !important;
+  color: #4B9FF2 !important;
 }
 
 .page-item.prev.disabled a, .page-item.next.disabled a {
@@ -169,7 +169,7 @@ body {
 }
 
 [class="page-link"]:not(.active) {
-  color: teal !important;
+  color: #4B9FF2 !important;
 }
 
 .notice {
