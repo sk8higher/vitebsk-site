@@ -9,14 +9,21 @@
 
 body {
   font-family: 'Rubik', serif, sans-serif !important;
-  // background: no-repeat center/100% url("backgr.jpg") !important;
-  height: 100vh;
+  // background: no-repeat center/100% url("bg.png") !important;
+  height: 100vh !important;
+  // width: 100vw !important;
+  background: url(bg.png) no-repeat center center fixed !important; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
 }
 
 .center-cont {
   margin-top: 30px !important;
   font-size: 1.25rem !important;
   background-color: white !important;
+  border-radius: 30px !important;
 }
 
 .text-justify {
@@ -37,7 +44,7 @@ body {
 
 .card-img-top {
   width: 100% !important;
-  height: 15vw !important;
+  height: 15vw;
   object-fit: cover !important;
 }
 
@@ -185,3 +192,25 @@ body {
 .blockquote {
   font-size: 1rem !important;
 }
+
+.flex-buttons {
+  gap: 5px 10px !important;
+}
+
+.button-padding {
+  padding: 10px 15px !important;
+}
+
+.btn-fit {
+  width: fit-content !important;
+}
+
+@media only screen and (max-width: 548px)  { 
+  .card-img-top {
+    width: 100% !important;
+    height: 40vw !important;
+    object-fit: cover !important;
+  }
+}
+
+
