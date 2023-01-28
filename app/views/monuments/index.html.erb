@@ -8,7 +8,7 @@
   <div class="container mt-15 mb-20">
     <div class="row">
       <div class="col text-center">
-        <%= link_to "Новая статья о памятнике", new_monument_path, class: 'btn btn-teal' %>
+        <%= link_to "Новая статья о памятнике", new_monument_path, class: 'btn btn-blue' %>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 <div class="container mt-15 mb-20">
   <div class="row">
     <div class="col text-center">
-      <%= link_to "На главную", root_path, class: 'btn btn-teal' %>
+      <%= link_to "На главную", root_path, class: 'btn btn-blue' %>
     </div>
   </div>
 </div>
@@ -26,11 +26,11 @@
   <% @monuments.each do |monument| %>
     <div class="col">
       <div class="card">
-        <%= image_tag monument.photo, width: '40%', height: '20%', class: 'card-img-top' %>
+        <%= image_tag monument.photo, class: 'card-img-top' %>
         <div class="card-body">
           <h5 class="card-title"><%= monument.name %></h5>
           <p class="card-text"><%= truncate strip_tags(monument.description), length: 100 %></p>
-          <%= link_to 'Посмотреть', monument_path(monument), class: 'btn btn-teal-200' %>
+          <%= link_to 'Посмотреть', monument_path(monument), class: 'btn btn-light-blue' %>
         </div>
       </div>
     </div>

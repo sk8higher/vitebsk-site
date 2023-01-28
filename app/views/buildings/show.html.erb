@@ -3,7 +3,7 @@
 <p class="notice"><%= notice %></p>
 
 <div class="container d-flex flex-column align-items-center card-cont blue-index-text">
-  <h1 class="text-center"><%= @building.name %></h1>
+  <h1 class="text-center mt-15"><%= @building.name %></h1>
   <%= image_tag @building.photo, class: 'img-fluid img-thumbnail' %>
   <p class="mt-15 text-justify"><%= sanitize @building.description, tags: %w(strong em a code pre h2 h3 p blockquote ul ol li br) %></p>
   <div>
