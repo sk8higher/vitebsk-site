@@ -1,10 +1,9 @@
 <%= render 'shared/header' %>
-
 <div
   class="container d-flex flex-column justify-content-center align-items-center body-width center-cont blue-index-text"
   >
   <div class="container-fluid text-justify">
-    <h1 class="text-center">Добро пожаловать</h1>
+    <h1 class="text-center">Историческая справка</h1>
     <hr />
     <div class="container">
       <p>
@@ -16,6 +15,29 @@
       <p>
         На Замковой горе находилась резиденция князя, а ниже жил люд попроще - торговцы и ремесленники. Уже в XII веке в городе был построен первый каменный храм – православная Свято-Благовещенская церковь, где хранились эталоны мер веса и длинны, используемые при торговых операциях; переписывались книги, летописи; обучались дети.</p>
     </div>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag("carousel1.webp", alt: "Старое фото Витебска", class: "d-block w-100") %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("carousel2.jpg", alt: "Старое фото Витебска", class: "d-block w-100" ) %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("carousel3.jpg", alt: "Старое фото Витебска", class: "d-block w-100") %>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Назад</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Вперед</span>
+      </button>
+    </div>
+    <h5 class="text-center mt-15">Старые фото Витебска</h5>
     <hr />
     <blockquote class="blockquote">
       <p>
