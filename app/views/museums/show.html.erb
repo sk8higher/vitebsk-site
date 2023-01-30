@@ -2,13 +2,13 @@
 
 <p class="notice"><%= notice %></p>
 
-<div class="container d-flex flex-column align-items-center">
-  <h1 class="text-center"><%= @museum.name %></h1>
+<div class="container d-flex flex-column align-items-center card-cont blue-index-text">
+  <h1 class="text-center mt-15"><%= @museum.name %></h1>
   <%= image_tag @museum.photo, class: 'img-fluid img-thumbnail' %>
   <p class="mt-15 text-justify"><%= sanitize @museum.description, tags: %w(strong em a code pre h2 h3 p blockquote ul ol li br) %></p>
   <div>
     <% if can? :manage, @museum %>
-      <div class="container mt-10 mb-20">
+      <div class="container mt-10">
         <div class="row">
           <div class="col text-center">
             <%= link_to "Отредактировать статью", edit_museum_path(@museum), class: 'btn btn-light-blue' %>
