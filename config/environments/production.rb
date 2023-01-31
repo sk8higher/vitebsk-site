@@ -92,4 +92,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.serve_static_assets = true
+
+  #Lazy-load images always
+  config.action_view.image_loading = 'lazy'
 end
