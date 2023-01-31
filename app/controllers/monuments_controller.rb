@@ -2,7 +2,7 @@ class MonumentsController < ApplicationController
   before_action :set_monument, only: %i[show edit update destroy]
 
   def index
-    @pagy, @monuments = pagy(Monument.all.order(created_at: :desc), items: 12)
+    @pagy, @monuments = pagy(Monument.all.order(created_at: :desc), items: 8)
   end
 
   def show

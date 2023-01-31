@@ -2,7 +2,7 @@ class BuildingsController < ApplicationController
   before_action :set_building, only: %i[ show edit update destroy ]
 
   def index
-    @pagy, @buildings = pagy(Building.all.order(created_at: :desc), items: 12)
+    @pagy, @buildings = pagy(Building.all.order(created_at: :desc), items: 8)
   end
 
   def show

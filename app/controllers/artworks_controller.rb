@@ -3,7 +3,7 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: %i[ show edit update destroy ]
 
   def index
-    @pagy, @artworks = pagy(Artwork.all.order(created_at: :desc), items: 12)
+    @pagy, @artworks = pagy(Artwork.all.order(created_at: :desc), items: 8)
   end
 
   def show
