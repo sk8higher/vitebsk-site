@@ -41,6 +41,6 @@
 </div>
 
 <div class="container d-flex justify-content-center mt-30">
-  <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>
+  <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} if @pagy.pages > 1 %>
 </div>
 
