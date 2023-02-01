@@ -3,7 +3,7 @@
 <p class="notice"><%= notice %></p>
 
 <div class="container d-flex flex-column align-items-center card-cont blue-index-text">
-  <h1 class="text-center"><%= @artwork.title %></h1>
+  <h1 class="mt-15 text-center"><%= @artwork.title %></h1>
   <% unless @artwork.photo.blank? %>
     <%= image_tag @artwork.photo, class: 'img-fluid img-thumbnail' %>
   <% end %>
