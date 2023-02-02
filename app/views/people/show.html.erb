@@ -25,7 +25,7 @@
       <div class="container mt-10 mb-20">
         <div class="row">
           <div class="col text-center">
-            <% unless @person.tag_id == 2 %>
+            <% unless @person.tag_id == 2 || @person.artworks.blank? %>
               <%= link_to 'Показать работы', person_artworks_path(@person), class: 'btn btn-blue' %>
             <% end %>
             <%= link_to "Назад", people_path, class: 'btn btn-outline-dark' %>
