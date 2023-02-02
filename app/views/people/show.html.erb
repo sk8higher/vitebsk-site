@@ -4,7 +4,7 @@
 
 <div class="container d-flex flex-column align-items-center card-cont blue-index-text">
   <h1 class="text-center mt-15"><%= @person.name %></h1>
-  <%= image_tag @person.photo, class: 'img-fluid img-thumbnail', height: 200 %>
+  <%= image_tag @person.photo.variant(resize_to_fill: [800, 600]), class: 'img-fluid img-thumbnail', height: 200 %>
   <p class="mt-15 text-justify"><%= sanitize @person.bio, tags: %w(strong em a code pre h2 h3 p blockquote ul ol li br) %></p>
   <div>
     <% if can? :manage, @person %>
