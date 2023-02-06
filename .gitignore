@@ -40,3 +40,5 @@
 /node_modules
 db/mock.sql
 db/backup.sql
+
+creds*
