@@ -1,24 +1,14 @@
-# README
+# Настройка окружения для запуска приложения
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Установка Windows Subsystem for Linux
 
-Things you may want to cover:
+Необходимо запустить консоль Powershell от имени администратора, выполнить следующие команды:
 
-* Ruby version
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
-* System dependencies
+Далее установить Ubuntu WSL из [Microsoft Store](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6).
 
-* Configuration
+2. Установка Ruby
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Заходим в Ubuntu WSL,
