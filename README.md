@@ -89,6 +89,16 @@
 
     bundle install
 
+Применим миграции к БД:
+
+    rails db:migrate RAILS_ENV=development
+
+(Вместо development возможно production, в зависимости от необходимого окружения)
+
+(Возможно понадобится сборка стилей перед запуском сервера)
+
+    rails assets:precompile
+
 Для запуска приложения в режиме development используем
 
     bin/dev
@@ -96,9 +106,5 @@
 Для запуска приложения в режиме production
 
     foreman start -f Procfile.prod
-
-(Возможно понадобится сборка стилей перед запуском сервера)
-
-    rails assets:precompile
 
 После запуска приложения оно будет доступно по адресу `localhost:3000`.
