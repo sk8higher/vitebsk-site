@@ -9,9 +9,7 @@
 
 body {
   font-family: 'Rubik', serif, sans-serif !important;
-  // background: no-repeat center/100% url("bg.png") !important;
   height: 100vh !important;
-  // width: 100vw !important;
   background: url(bg.png) no-repeat center center fixed !important; 
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
@@ -78,11 +76,8 @@ body {
 }
 
 .link-unstyled {
-  color: var(--near-white-text);
-  text-decoration: none;
-  &:hover {
-    color: $teal-200;
-  }
+  color: var(--near-white-text) !important;
+  text-decoration: none !important;
 }
 
 .my-15 {
