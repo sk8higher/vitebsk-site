@@ -54,7 +54,7 @@ RSpec.describe Building do
       end
 
       context 'description length validation' do
-        it 'should not be valid with a name less than 5 symbols' do
+        it 'should not be valid with a description less than 5 symbols' do
           building.description = Faker::Lorem.characters(number: 3)
           expect(building).not_to be_valid
         end
