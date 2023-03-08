@@ -1,6 +1,8 @@
 require_relative '../rails_helper'
 
 RSpec.describe Building do
+  let(:building) { create(:building)}
+
   context 'model validations' do
     it { should have_one_attached :photo }
 
@@ -16,13 +18,8 @@ RSpec.describe Building do
   end
 
   context 'model object validations' do
-    # it 'should be invalid when just instantiated' do
-    #   building = create(:building)
-    #   expect(building).not_to be_valid
-    # end
-
-    it 'should be invalid with no name provided' do
-
+    it 'should be valid with all attributes present' do
+      expect(building).to be_valid
     end
   end
 end
