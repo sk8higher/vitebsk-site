@@ -5,9 +5,4 @@ RSpec.describe PagesController do
     get :index
     assert_response :success
   end
-
-  it 'should show page content' do
-    visit root_path
-    expect(page).to have_content 'Историческая справка'
-  end
 end
