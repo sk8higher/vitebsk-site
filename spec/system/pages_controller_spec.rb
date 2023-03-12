@@ -18,21 +18,22 @@ RSpec.describe PagesController do
   end
 
   describe '#header buttons' do
-    it 'should redirect to root after clicking on first navbar item' do
+    before(:each) do
       visit root_path
+    end
+
+    it 'should redirect to root after clicking on first navbar item' do
       toggle_menu
       click_link('Главная')
       expect(page).to have_current_path(root_path)
     end
 
     it 'should redirect to root after clicking on navbar icon' do
-      visit root_path
       find(:css, '.navbar-brand > img').click
       expect(page).to have_current_path(root_path)
     end
 
     it 'should expand menu on click' do
-      visit root_path
       toggle_menu
 
       expect {
@@ -42,7 +43,6 @@ RSpec.describe PagesController do
 
     context 'categories menu' do
       before(:each) do
-        visit root_path
         toggle_menu
         toggle_categories_menu
       end
@@ -75,6 +75,15 @@ RSpec.describe PagesController do
 
         expect(page).to have_current_path(people_path)
       end
+    end
+
+    it 'should redirect to new user session path after clicking last navbar button' do
+      visit root_path
+      toggle_menu
+
+      click_link('Вход для администратора')
+
+      expect(page).to have_current_path(new_user_session_path)
     end
   end
 end
