@@ -44,3 +44,5 @@ db/backup.sql
 creds*
 
 spec/examples.txt
+
+.byebug_history
