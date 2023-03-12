@@ -73,6 +73,7 @@ GEM
     bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
     cancancan (3.4.0)
     capybara (3.38.0)
       addressable
@@ -260,6 +261,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  byebug
   cancancan
   capybara
   cssbundling-rails
