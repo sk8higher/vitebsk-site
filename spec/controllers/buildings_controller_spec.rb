@@ -64,8 +64,9 @@ RSpec.describe BuildingsController do
 
   describe 'DELETE #destroy' do
     it 'deletes the building and redirects to the index page' do
+      delete_building = create(:building)
       expect {
-        delete :destroy, params: { id: saved_building.id }
+        delete :destroy, params: { id: delete_building.id }
       }.to change(Building, :count).by(-1)
       expect(response).to redirect_to(buildings_path)
     end
