@@ -1,5 +1,4 @@
 require_relative '../rails_helper'
-require 'faker'
 
 RSpec.describe Building do
   let(:building) { create(:building) }
