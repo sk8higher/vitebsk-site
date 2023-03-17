@@ -40,6 +40,18 @@ RSpec.describe PeopleController do
       end.to change(Person, :count).by(1)
       expect(response).to redirect_to(assigns(:person))
     end
+
+    it 'returns unprocessable_entity if person is not saved' do
+      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
+      expect do
+        post :create, params: { id: created_person.id, person: { name: nil,
+                                                                bio: nil,
+                                                                photo: file } }
+      end.not_to change(Person, :count).from(0)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to render_template(:new)
+    end
   end
 
   describe 'GET #edit' do
