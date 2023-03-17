@@ -1,5 +1,5 @@
 # Витебск - мой город
-[![Coverage Status](https://coveralls.io/repos/github/sk8higher/vitebsk-site/badge.svg)](https://coveralls.io/github/sk8higher/vitebsk-site)
+[![Coverage Status](https://coveralls.io/repos/github/sk8higher/vitebsk-site/badge.svg?branch=main)](https://coveralls.io/github/sk8higher/vitebsk-site?branch=main)
 
 ---
 
