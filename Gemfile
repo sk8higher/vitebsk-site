@@ -78,6 +78,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'rails-controller-testing'
+  gem 'database_cleaner-active_record', '~> 2.1.0'
+  gem 'coveralls', require: false
 end
 
 # Auth
