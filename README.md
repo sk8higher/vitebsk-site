@@ -1,3 +1,8 @@
+# Витебск - мой город
+[![Coverage Status](https://coveralls.io/repos/github/sk8higher/vitebsk-site/badge.svg)](https://coveralls.io/github/sk8higher/vitebsk-site)
+
+---
+
 # Настройка окружения для запуска приложения
 
 ## Установка Windows Subsystem for Linux
