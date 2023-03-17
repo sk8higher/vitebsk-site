@@ -3,13 +3,45 @@ require_relative '../rails_helper'
 RSpec.describe PeopleController do
   let(:tag) { create(:tag) }
   let(:saved_person) { create(:person, tag_id: tag.id) }
+  let(:saved_person2) { create(:person, tag_id: tag.id) }
   let(:created_person) { build(:person, tag_id: tag.id) }
 
   describe 'GET #index' do
-    it 'returns http success and renders the index template' do
-      get :index
-      expect(response).to have_http_status(:success)
-      expect(response).to render_template(:index)
+    context 'without tag_id parameter' do
+      before { get :index }
+
+      it 'returns http success and renders the index template' do
+        expect(response).to have_http_status(:success)
+      end
+
+      it 'renders index template' do
+        expect(response).to render_template(:index)
+      end
+
+      it 'assigns @people to all people' do
+        expect(assigns(:people)).to match_array([saved_person, saved_person2])
+      end
+    end
+
+    context 'with tag_id parameter' do
+      it 'returns http success' do
+        get :index, params: { tag_id: tag.id }
+        expect(response).to have_http_status(:success)
+      end
+
+      it 'assigns @people to people with the specified tag only' do
+        new_tag = create(:tag)
+        tagged_person = create(:person, tag_id: new_tag.id)
+
+        get :index, params: { tag_id: new_tag.id }
+
+        expect(assigns(:people)).to match_array([tagged_person])
+      end
+
+      it 'renders the index template' do
+        get :index
+        expect(response).to render_template(:index)
+      end
     end
   end
 
