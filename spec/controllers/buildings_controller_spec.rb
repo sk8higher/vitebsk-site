@@ -43,7 +43,7 @@ RSpec.describe BuildingsController do
     it 'returns unprocessable_entity if building is not saved' do
       expect do
         post :create, params: { building: { name: nil,
-                                           bio: nil,
+                                           description: nil,
                                            photo: file } }
       end.not_to change(Building, :count).from(0)
 
