@@ -29,14 +29,26 @@ RSpec.describe MuseumsController do
   end
 
   describe 'POST #create' do
+    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image3.jpg'), 'image/png') }
+
     it 'creates a new museum and redirects to the show page' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image3.jpg'), 'image/png')
       expect {
         post :create, params: { museum: { name: created_museum.name,
                                          description: created_museum.description,
                                          photo: file } }
       }.to change(Museum, :count).by(1)
       expect(response).to redirect_to(assigns(:museum))
+    end
+
+    it 'returns unprocessable entity if museum is not saved' do
+      expect {
+        post :create, params: { museum: { name: nil,
+                                         description: nil,
+                                         photo: file } }
+      }.not_to change(Museum, :count).from(0)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to render_template(:new)
     end
   end
 
@@ -49,8 +61,9 @@ RSpec.describe MuseumsController do
   end
 
   describe 'PATCH #update' do
+    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png') }
+
     it 'updates the museum and redirects to the show page' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
       new_description = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_museum.id, museum: { name: Faker::Lorem.characters(number: 40),
@@ -59,6 +72,15 @@ RSpec.describe MuseumsController do
       expect(response).to redirect_to(assigns(:museum))
       saved_museum.reload
       expect(saved_museum.description).to eq(new_description)
+    end
+
+    it 'returns unprocessable entity if museum is not updated' do
+      patch :update, params: { id: saved_museum.id, museum: { name: nil,
+                                                             description: nil,
+                                                             photo: file } }
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to render_template(:edit)
     end
   end
 
