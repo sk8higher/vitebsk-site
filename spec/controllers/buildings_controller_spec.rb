@@ -75,7 +75,7 @@ RSpec.describe BuildingsController do
 
     it 'returns unprocessable entity if building is not updated' do
       patch :update, params: { id: saved_building.id, building: { name: nil,
-                                                                 bio: nil,
+                                                                 description: nil,
                                                                  photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
