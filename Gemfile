@@ -79,6 +79,7 @@ group :test do
   gem "webdrivers"
   gem 'rails-controller-testing'
   gem 'database_cleaner-active_record', '~> 2.1.0'
+  gem 'simplecov'
   gem 'simplecov-lcov', '~> 0.8.0'
 end
 
