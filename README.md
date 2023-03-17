@@ -1,6 +1,8 @@
 # Витебск - мой город
 [![Coverage Status](https://coveralls.io/repos/github/sk8higher/vitebsk-site/badge.svg?branch=main)](https://coveralls.io/github/sk8higher/vitebsk-site?branch=main)
 
+[Деплой на fly.io](https://vitebsk-site.fly.dev/)
+
 ---
 
 # Настройка окружения для запуска приложения
