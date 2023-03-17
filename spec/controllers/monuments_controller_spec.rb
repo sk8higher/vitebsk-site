@@ -29,14 +29,26 @@ RSpec.describe MonumentsController do
   end
 
   describe 'POST #create' do
+    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png') }
+
     it 'creates a new monument and redirects to the show page' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
       expect {
         post :create, params: { monument: { name: created_monument.name,
                                            description: created_monument.description,
                                            photo: file } }
       }.to change(Monument, :count).by(1)
       expect(response).to redirect_to(assigns(:monument))
+    end
+
+    it 'returns unprocessable_entity if monument is not saved' do
+      expect {
+        post :create, params: { monument: { name: nil,
+                                           description: nil,
+                                           photo: file } }
+      }.not_to change(Monument, :count).from(0)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to render_template(:new)
     end
   end
 
@@ -49,8 +61,9 @@ RSpec.describe MonumentsController do
   end
 
   describe 'PATCH #update' do
+    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image1.png'), 'image/png') }
+
     it 'updates the monument and redirects to the show page' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image1.png'), 'image/png')
       new_description = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_monument.id, monument: { name: Faker::Lorem.characters(number: 40),
@@ -59,6 +72,15 @@ RSpec.describe MonumentsController do
       expect(response).to redirect_to(assigns(:monument))
       saved_monument.reload
       expect(saved_monument.description).to eq(new_description)
+    end
+
+    it 'returns unprocessable entity if building is not updated' do
+      patch :update, params: { id: saved_monument.id, monument: { name: nil,
+                                                                 description: nil,
+                                                                 photo: file } }
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to render_template(:edit)
     end
   end
 
