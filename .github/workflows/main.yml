@@ -28,14 +28,19 @@ jobs:
       run: |
         gem install bundler --no-document
         bundle install --jobs 4 --retry 3
+        sudo apt-get update && sudo apt-get install yarn
       
     - name: Set up database
       run: |
         bundle exec rails db:create db:migrate RAILS_ENV=test
         
     - name: Run tests
+      env:
+        RAILS_ENV: test
       run: |
+        bin/rails assets precompile
         bundle exec rspec spec/
+
     - name: Publish to coveralls.io
       uses: coverallsapp/github-action@v1.1.2
       with:
