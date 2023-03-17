@@ -19,6 +19,11 @@ jobs:
       with:
         node-version: "16.x"
 
+    - name: Install openssl
+      run: |
+        sudo apt-get update -yq
+        sudo apt-get install -y openssl
+
     - name: Install dependencies
       run: |
         gem install bundler --no-document
