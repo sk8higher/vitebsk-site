@@ -38,7 +38,7 @@ jobs:
       env:
         RAILS_ENV: test
       run: |
-        bin/rails assets precompile
+        bin/rails assets:precompile
         bundle exec rspec spec/
 
     - name: Publish to coveralls.io
