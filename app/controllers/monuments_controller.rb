@@ -19,7 +19,7 @@ class MonumentsController < ApplicationController
     @monument = Monument.new(monument_params)
 
     if @monument.save
-      redirect_to monument_path(@monument), notice: 'Статья была успешно создана.'
+      redirect_to monument_path(@monument), notice: t('notice.create.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class MonumentsController < ApplicationController
 
   def update
     if @monument.update(monument_params)
-      redirect_to monument_path(@monument), notice: 'Статья была успешно обновлена.'
+      redirect_to monument_path(@monument), notice: t('notice.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class MonumentsController < ApplicationController
   def destroy
     @monument.destroy
 
-    redirect_to monuments_url, notice: 'Статья была успешно уничтожена.'
+    redirect_to monuments_url, notice: t('notice.destroy.success')
   end
 
   private

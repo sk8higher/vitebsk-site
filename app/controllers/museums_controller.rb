@@ -19,7 +19,7 @@ class MuseumsController < ApplicationController
     @museum = Museum.new(museum_params)
 
     if @museum.save
-      redirect_to museum_path(@museum), notice: 'Статья была успешно создана.'
+      redirect_to museum_path(@museum), notice: t('notice.create.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class MuseumsController < ApplicationController
 
   def update
     if @museum.update(museum_params)
-      redirect_to museum_path(@museum), notice: 'Статья была успешно обновлена.'
+      redirect_to museum_path(@museum), notice: t('notice.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class MuseumsController < ApplicationController
   def destroy
     @museum.destroy
 
-    redirect_to museums_url, notice: 'Статья была успешно уничтожена.'
+    redirect_to museums_url, notice: t('notice.destroy.success')
   end
 
   private

@@ -24,7 +24,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
-      redirect_to person_path(@person), notice: 'Статья была успешно создана.'
+      redirect_to person_path(@person), notice: t('notice.create.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class PeopleController < ApplicationController
 
   def update
     if @person.update(person_params)
-      redirect_to person_path(@person), notice: 'Статья была успешно обновлена.'
+      redirect_to person_path(@person), notice: t('notice.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -41,7 +41,7 @@ class PeopleController < ApplicationController
   def destroy
     @person.destroy
 
-    redirect_to people_url, notice: 'Статья была успешно уничтожена.'
+    redirect_to people_url, notice: t('notice.destroy.success')
   end
 
   private

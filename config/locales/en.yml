@@ -1,1 +1,8 @@
 en:
+  notice:
+    create:
+      success: 'The article was successfully created.'
+    update:
+      success: 'The article was successfully updated.'
+    destroy:
+      success: 'The article was succesully destroyed'

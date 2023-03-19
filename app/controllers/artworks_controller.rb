@@ -20,7 +20,7 @@ class ArtworksController < ApplicationController
     @artwork = @person.artworks.build(artwork_params)
 
     if @artwork.save
-      redirect_to person_artwork_path(@person, @artwork), notice: 'Статья была успешно создана.'
+      redirect_to person_artwork_path(@person, @artwork), notice: t('notice.create.success') 
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class ArtworksController < ApplicationController
 
   def update
     if @artwork.update(artwork_params)
-      redirect_to person_artwork_path(@person, @artwork), notice: 'Статья была успешно обновлена.'
+      redirect_to person_artwork_path(@person, @artwork), notice: t('notice.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork.destroy
 
-    redirect_to person_artworks_path(@person), notice: 'Статья была успешно уничтожена.'
+    redirect_to person_artworks_path(@person), notice: t('notice.destroy.success') 
   end
 
   private

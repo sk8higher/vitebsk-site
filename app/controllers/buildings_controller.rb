@@ -19,7 +19,7 @@ class BuildingsController < ApplicationController
     @building = Building.new(building_params)
 
     if @building.save
-      redirect_to building_path(@building), notice: 'Статья была успешно создана.'
+      redirect_to building_path(@building), notice: t('notice.create.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class BuildingsController < ApplicationController
 
   def update
     if @building.update(building_params)
-      redirect_to building_path(@building), notice: 'Статья была успешно обновлена.'
+      redirect_to building_path(@building), notice: t('notice.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class BuildingsController < ApplicationController
   def destroy
     @building.destroy
 
-    redirect_to buildings_url, notice: 'Статья была успешно уничтожена.'
+    redirect_to buildings_url, notice: t('notice.destroy.success')
   end
 
   private
