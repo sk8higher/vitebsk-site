@@ -1,7 +1,7 @@
 <%= form_with(model: monument, data: { turbo: false }, class: 'form-width-avg') do |form| %>
   <% if monument.errors.any? %>
     <div style="color: red">
-      <h2>Ошибки:</h2>
+      <h2><%= t('.errors') %></h2>
       <ul>
         <% monument.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -14,7 +14,7 @@
     <div class="form-group row mb-15">
       <%= form.label :name %>
       <%= form.text_field :name, class: 'form-control' %>
-    </div> 
+    </div>
 
     <div class="form-group row mb-15">
       <%= form.label :description %>
@@ -35,4 +35,3 @@
     </div>
   </fieldset>
 <% end %>
-

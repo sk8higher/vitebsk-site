@@ -1,7 +1,7 @@
 <%= render 'shared/header' %>
 <div class="container d-flex flex-column align-items-center">
-  <h1 class="text-center my-15">Изменить памятник</h1>
-  <%= render "form", monument: @monument, text: 'Сохранить' %>
+  <h1 class="text-center my-15"><%= t('.main_text') %></h1>
+  <%= render "form", monument: @monument, text: t('.save') %>
 
-  <%= link_to "Назад", @monument, class: 'btn btn-outline-dark' %>
+  <%= link_to t('.back'), @monument, class: 'btn btn-outline-dark' %>
 </div>

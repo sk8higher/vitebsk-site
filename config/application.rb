@@ -14,7 +14,7 @@ module VitebskSite
     config.active_storage.silence_invalid_content_types_warning = true
 
     config.i18n.available_locales = %i[en ru]
-    config.i18n.default_locale = :ru
+    config.i18n.default_locale = :en
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     # Configuration for the application, engines, and railties goes here.
