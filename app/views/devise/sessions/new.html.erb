@@ -1,29 +1,29 @@
 <%= render 'shared/header' %>
 
 <div class="container d-flex flex-column align-items-center">
-  <h2 class="text-center my-15">Войти</h2>
+  <h2 class="text-center my-15"><%= t('log_in') %></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'form-width-avg') do |f| %>
     <fieldset class="my-30">
       <div class="field form-group row mb-15">
-        <%= f.label :email %><br />
+        <%= f.label :email, t('form.email') %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
       <div class="field form-group row mb-15">
-        <%= f.label :password %><br />
+        <%= f.label :password, t('form.password') %><br />
         <%= f.password_field :password, autocomplete: "current-password", class: 'form-control'%>
       </div>
 
       <div class="actions container mt-10 mb-15">
         <div class="row">
           <div class="col text-center">
-            <%= f.submit "Войти", class: 'btn btn-blue mt-10' %>
+            <%= f.submit t('log_in'), class: 'btn btn-blue mt-10' %>
           </div>
         </div>
       </div>
     </fieldset>
   <% end %>
-  <%= link_to "Назад", root_path, class: 'btn btn-outline-dark' %>
+  <%= link_to t('back'), root_path, class: 'btn btn-outline-dark' %>
 </div>
 <%# render "devise/shared/links" %>

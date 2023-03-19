@@ -1,0 +1,6 @@
+ru:
+  log_in: 'Войти'
+  back: 'Назад'
+  form:
+    email: 'Email'
+    password: 'Пароль'
