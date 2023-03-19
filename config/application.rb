@@ -13,8 +13,8 @@ module VitebskSite
     config.active_storage.variable_content_type = %w(image/png image/jpg image/jpeg)
     config.active_storage.silence_invalid_content_types_warning = true
 
-    config.i18n.available_locales = %i[en ru be]
-    config.i18n.default_locale = :ru
+    config.i18n.available_locales = %i[en ru]
+    config.i18n.default_locale = :en
 
     # Configuration for the application, engines, and railties goes here.
     #
