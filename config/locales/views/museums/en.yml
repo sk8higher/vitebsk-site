@@ -1,0 +1,23 @@
+en:
+  museums:
+    index:
+      main_text: 'Museums in Vitebsk'
+      buttons:
+        new_article: 'New article about the museum'
+        go_to_home: 'Home'
+        visit_article: 'Visit'
+    edit:
+      main_text: 'Change information about the museum'
+      save: 'Save'
+      back: 'Back'
+    new:
+      main_text: 'New article about the museum'
+      create_article: 'Create new article'
+      back: 'Back'
+    show:
+      edit_this_article: 'Edit this article'
+      delete_this_article: 'Delete this article'
+      delete_confirmation: 'Are you sure?'
+      back: 'Back'
+    form:
+      errors: 'Errors:'
