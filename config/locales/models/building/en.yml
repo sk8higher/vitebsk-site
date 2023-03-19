@@ -1,5 +1,7 @@
 en:
   activerecord:
+    models:
+      building: 'Building'
     attributes:
       building:
         name: 'Name'

@@ -1,5 +1,7 @@
 ru:
   activerecord:
+    models:
+      building: 'Место'
     attributes:
       building:
         name: 'Название'
