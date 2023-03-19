@@ -1,0 +1,8 @@
+en:
+  buildings:
+    index:
+      main_text: 'Significant places of the city'
+      buttons:
+        new_article: 'New article about the place'
+        go_to_home: 'Home'
+        visit_article: 'Visit'

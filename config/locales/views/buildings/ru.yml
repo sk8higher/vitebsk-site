@@ -1,0 +1,8 @@
+ru:
+  buildings:
+    index:
+      main_text: 'Значимые места города'
+      buttons:
+        new_article: 'Новая статья о месте'
+        go_to_home: 'На главную'
+        visit_article: 'Посмотреть'
