@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col text-center">
             <%= link_to t('.edit_this_article'), edit_monument_path(@monument), class: 'btn btn-light-blue' %>
-            <%= link_to t('.delete_this_article'), @monument, data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
+            <%= link_to t('.delete_this_article'), @monument, data: { 'turbo-method': :delete, 'turbo-confirm': t('.delete_confirmation') }, class: 'btn btn-danger' %>
 
             <%= link_to t('.back'), monuments_path, class: 'btn btn-outline-dark' %>
           </div>
