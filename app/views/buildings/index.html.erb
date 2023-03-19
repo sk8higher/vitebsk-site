@@ -30,7 +30,7 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title"><%= building.name %></h5>
           <p class="card-text"><%= truncate strip_tags(building.description), length: 160 %></p>
-          <%= link_to t('.buttons.visit'), building_path(building), class: 'btn btn-light-blue mt-auto align-self-start' %>
+          <%= link_to t('.buttons.visit_article'), building_path(building), class: 'btn btn-light-blue mt-auto align-self-start' %>
         </div>
       </div>
     </div>

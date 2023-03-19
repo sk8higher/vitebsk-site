@@ -9,13 +9,15 @@ ru:
     edit:
       main_text: 'Изменить информацию о месте'
       save: 'Сохранить'
+      back: 'Назад'
     new:
       main_text: 'Новая статья о месте'
       create_article: 'Создать статью'
+      back: 'Назад'
     show:
       edit_this_article: 'Отредактировать статью'
       delete_this_article: 'Удалить статью'
       delete_confirmation: 'Вы уверены?'
-    back: 'Назад'
+      back: 'Назад'
     form:
       errors: 'Ошибки:'

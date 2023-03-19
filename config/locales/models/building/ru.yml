@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    attributes:
+      building:
+        name: 'Название'
+        description: 'Описание'
+        photo: 'Фото'

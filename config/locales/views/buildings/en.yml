@@ -9,13 +9,15 @@ en:
     edit:
       main_text: 'Change information about the place'
       save: 'Save'
+      back: 'Back'
     new:
       main_text: 'New article about the place'
       create_article: 'Create new article'
+      back: 'Back'
     show:
       edit_this_article: 'Edit this article'
       delete_this_article: 'Delete this article'
       delete_confirmation: 'Are you sure?'
-    back: 'Back'
+      back: 'Back'
     form:
       errors: 'Errors:'

@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      building:
+        name: 'Name'
+        description: 'Description'
+        photo: 'Photo'
