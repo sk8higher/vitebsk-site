@@ -89,3 +89,7 @@ gem 'devise'
 
 # Pagination
 gem 'pagy'
+
+gem 'rubocop', '~> 1.48', require: false
+gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false
