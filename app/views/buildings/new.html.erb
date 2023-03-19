@@ -1,8 +1,7 @@
 <%= render 'shared/header' %>
 <div class="container d-flex flex-column align-items-center">
-  <h1 class="text-center my-15">Новая статья о месте</h1>
+  <h1 class="text-center my-15"><%= t('.main_text') %></h1>
 
-  <%= render "form", building: @building, text: 'Создать статью' %>
-  <%= link_to "Назад", buildings_path, class: 'btn btn-outline-dark' %>
+  <%= render "form", building: @building, text: t('.create_article') %>
+  <%= link_to t('.back'), buildings_path, class: 'btn btn-outline-dark' %>
 </div>
-

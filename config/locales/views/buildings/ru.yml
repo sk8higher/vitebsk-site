@@ -6,3 +6,16 @@ ru:
         new_article: 'Новая статья о месте'
         go_to_home: 'На главную'
         visit_article: 'Посмотреть'
+    edit:
+      main_text: 'Изменить информацию о месте'
+      save: 'Сохранить'
+    new:
+      main_text: 'Новая статья о месте'
+      create_article: 'Создать статью'
+    show:
+      edit_this_article: 'Отредактировать статью'
+      delete_this_article: 'Удалить статью'
+      delete_confirmation: 'Вы уверены?'
+    back: 'Назад'
+    form:
+      errors: 'Ошибки:'

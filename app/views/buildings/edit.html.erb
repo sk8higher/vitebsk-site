@@ -1,7 +1,7 @@
 <%= render 'shared/header' %>
 <div class="container d-flex flex-column align-items-center">
-  <h1 class="text-center my-15">Изменить место</h1>
-  <%= render "form", building: @building, text: 'Сохранить' %>
+  <h1 class="text-center my-15"><%= t('.main_text') %></h1>
+  <%= render "form", building: @building, text: t('.save') %>
 
-  <%= link_to "Назад", @building, class: 'btn btn-secondary' %>
+  <%= link_to t('.back'), @building, class: 'btn btn-secondary' %>
 </div>
