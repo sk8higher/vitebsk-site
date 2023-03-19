@@ -36,20 +36,20 @@ RSpec.describe ArtworksController do
     let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image6.jpg'), 'image/png') }
 
     it 'creates a new artwork and redirects to the show page' do
-      expect {
+      expect do
         post :create, params: { person_id: saved_person.id, artwork: { title: created_artwork.title,
-                                                                      description: created_artwork.description,
-                                                                      photo: file } }
-      }.to change(Artwork, :count).by(1)
+                                                                       description: created_artwork.description,
+                                                                       photo: file } }
+      end.to change(Artwork, :count).by(1)
       expect(response).to redirect_to(person_artwork_path(saved_person, Artwork.last))
     end
 
     it 'returns unprocessable entity if artwork is not saved' do
-      expect {
+      expect do
         post :create, params: { person_id: saved_person.id, artwork: { title: nil,
-                                                                      description: nil,
-                                                                      photo: file } }
-      }.not_to change(Artwork, :count).from(0)
+                                                                       description: nil,
+                                                                       photo: file } }
+      end.not_to change(Artwork, :count).from(0)
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:new)
@@ -72,7 +72,8 @@ RSpec.describe ArtworksController do
 
       patch :update, params: { person_id: saved_person.id,
                                id: saved_artwork.id,
-                               artwork: { title: Faker::Lorem.characters(number: 40), description: new_desc, photo: file } }
+                               artwork: { title: Faker::Lorem.characters(number: 40), description: new_desc,
+                                          photo: file } }
       expect(response).to redirect_to(person_artwork_path(saved_person, saved_artwork))
       saved_artwork.reload
       expect(saved_artwork.description).to eq(new_desc)
@@ -80,10 +81,10 @@ RSpec.describe ArtworksController do
 
     it 'returns unprocessable entity if artwork is not updated' do
       patch :update, params: { person_id: saved_person.id,
-                              id: saved_artwork.id,
-                              artwork: { name: nil,
-                                         description: nil,
-                                         photo: file } }
+                               id: saved_artwork.id,
+                               artwork: { name: nil,
+                                          description: nil,
+                                          photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:edit)
@@ -94,9 +95,9 @@ RSpec.describe ArtworksController do
     it 'deletes the artwork and redirects to the index page' do
       delete_artwork = create(:artwork, person_id: saved_person.id)
 
-      expect {
+      expect do
         delete :destroy, params: { person_id: saved_person, id: delete_artwork.id }
-      }.to change(Artwork, :count).by(-1)
+      end.to change(Artwork, :count).by(-1)
       expect(response).to redirect_to(person_artworks_path)
     end
   end

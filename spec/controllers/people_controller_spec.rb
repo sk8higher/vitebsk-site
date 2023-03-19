@@ -19,7 +19,7 @@ RSpec.describe PeopleController do
       end
 
       it 'assigns @people to all people' do
-        expect(assigns(:people)).to match_array([saved_person, saved_person2])
+        expect(assigns(:people)).to contain_exactly(saved_person, saved_person2)
       end
     end
 
@@ -35,7 +35,7 @@ RSpec.describe PeopleController do
 
         get :index, params: { tag_id: new_tag.id }
 
-        expect(assigns(:people)).to match_array([tagged_person])
+        expect(assigns(:people)).to contain_exactly(tagged_person)
       end
 
       it 'renders the index template' do
@@ -66,9 +66,9 @@ RSpec.describe PeopleController do
       file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image4.jpg'), 'image/png')
       expect do
         post :create, params: { person: { name: created_person.name,
-                                         bio: created_person.bio,
-                                         photo: file,
-                                         tag_id: tag.id } }
+                                          bio: created_person.bio,
+                                          photo: file,
+                                          tag_id: tag.id } }
       end.to change(Person, :count).by(1)
       expect(response).to redirect_to(assigns(:person))
     end
@@ -77,8 +77,8 @@ RSpec.describe PeopleController do
       file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
       expect do
         post :create, params: { id: created_person.id, person: { name: nil,
-                                                                bio: nil,
-                                                                photo: file } }
+                                                                 bio: nil,
+                                                                 photo: file } }
       end.not_to change(Person, :count).from(0)
 
       expect(response).to have_http_status(:unprocessable_entity)
@@ -100,8 +100,8 @@ RSpec.describe PeopleController do
       new_bio = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_person.id, person: { name: Faker::Lorem.characters(number: 40),
-                                                             bio: new_bio,
-                                                             photo: file } }
+                                                              bio: new_bio,
+                                                              photo: file } }
       expect(response).to redirect_to(assigns(:person))
       saved_person.reload
       expect(saved_person.bio).to eq(new_bio)
@@ -110,8 +110,8 @@ RSpec.describe PeopleController do
     it 'returns unprocessable entity if person is not updated' do
       file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
       patch :update, params: { id: saved_person.id, person: { name: nil,
-                                                             bio: nil,
-                                                             photo: file } }
+                                                              bio: nil,
+                                                              photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:edit)

@@ -32,20 +32,20 @@ RSpec.describe MuseumsController do
     let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image3.jpg'), 'image/png') }
 
     it 'creates a new museum and redirects to the show page' do
-      expect {
+      expect do
         post :create, params: { museum: { name: created_museum.name,
-                                         description: created_museum.description,
-                                         photo: file } }
-      }.to change(Museum, :count).by(1)
+                                          description: created_museum.description,
+                                          photo: file } }
+      end.to change(Museum, :count).by(1)
       expect(response).to redirect_to(assigns(:museum))
     end
 
     it 'returns unprocessable entity if museum is not saved' do
-      expect {
+      expect do
         post :create, params: { museum: { name: nil,
-                                         description: nil,
-                                         photo: file } }
-      }.not_to change(Museum, :count).from(0)
+                                          description: nil,
+                                          photo: file } }
+      end.not_to change(Museum, :count).from(0)
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:new)
@@ -67,8 +67,8 @@ RSpec.describe MuseumsController do
       new_description = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_museum.id, museum: { name: Faker::Lorem.characters(number: 40),
-                                                             description: new_description,
-                                                             photo: file } }
+                                                              description: new_description,
+                                                              photo: file } }
       expect(response).to redirect_to(assigns(:museum))
       saved_museum.reload
       expect(saved_museum.description).to eq(new_description)
@@ -76,8 +76,8 @@ RSpec.describe MuseumsController do
 
     it 'returns unprocessable entity if museum is not updated' do
       patch :update, params: { id: saved_museum.id, museum: { name: nil,
-                                                             description: nil,
-                                                             photo: file } }
+                                                              description: nil,
+                                                              photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:edit)
@@ -87,9 +87,9 @@ RSpec.describe MuseumsController do
   describe 'DELETE #destroy' do
     it 'deletes the museum and redirects to the index page' do
       delete_museum = create(:museum)
-      expect {
+      expect do
         delete :destroy, params: { id: delete_museum.id }
-      }.to change(Museum, :count).by(-1)
+      end.to change(Museum, :count).by(-1)
       expect(response).to redirect_to(museums_path)
     end
   end

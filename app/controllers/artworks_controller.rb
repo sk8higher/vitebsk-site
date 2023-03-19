@@ -1,20 +1,18 @@
 class ArtworksController < ApplicationController
   before_action :get_person
-  before_action :set_artwork, only: %i[ show edit update destroy ]
+  before_action :set_artwork, only: %i[show edit update destroy]
 
   def index
     @pagy, @artworks = pagy(@person.artworks.order(created_at: :desc), items: 8)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @artwork = Artwork.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @artwork = @person.artworks.build(artwork_params)

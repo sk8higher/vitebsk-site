@@ -1,4 +1,5 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - db/migrate/**/*
     - db/schema.rb
@@ -21,3 +22,6 @@ require:
 
 Style/Documentation:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 2

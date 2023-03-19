@@ -32,20 +32,20 @@ RSpec.describe MonumentsController do
     let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png') }
 
     it 'creates a new monument and redirects to the show page' do
-      expect {
+      expect do
         post :create, params: { monument: { name: created_monument.name,
-                                           description: created_monument.description,
-                                           photo: file } }
-      }.to change(Monument, :count).by(1)
+                                            description: created_monument.description,
+                                            photo: file } }
+      end.to change(Monument, :count).by(1)
       expect(response).to redirect_to(assigns(:monument))
     end
 
     it 'returns unprocessable_entity if monument is not saved' do
-      expect {
+      expect do
         post :create, params: { monument: { name: nil,
-                                           description: nil,
-                                           photo: file } }
-      }.not_to change(Monument, :count).from(0)
+                                            description: nil,
+                                            photo: file } }
+      end.not_to change(Monument, :count).from(0)
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:new)
@@ -67,8 +67,8 @@ RSpec.describe MonumentsController do
       new_description = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_monument.id, monument: { name: Faker::Lorem.characters(number: 40),
-                                                                 description: new_description,
-                                                                 photo: file } }
+                                                                  description: new_description,
+                                                                  photo: file } }
       expect(response).to redirect_to(assigns(:monument))
       saved_monument.reload
       expect(saved_monument.description).to eq(new_description)
@@ -76,8 +76,8 @@ RSpec.describe MonumentsController do
 
     it 'returns unprocessable entity if building is not updated' do
       patch :update, params: { id: saved_monument.id, monument: { name: nil,
-                                                                 description: nil,
-                                                                 photo: file } }
+                                                                  description: nil,
+                                                                  photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:edit)
@@ -87,9 +87,9 @@ RSpec.describe MonumentsController do
   describe 'DELETE #destroy' do
     it 'deletes the monument and redirects to the index page' do
       delete_monument = create(:monument)
-      expect {
+      expect do
         delete :destroy, params: { id: delete_monument.id }
-      }.to change(Monument, :count).by(-1)
+      end.to change(Monument, :count).by(-1)
       expect(response).to redirect_to(monuments_path)
     end
   end

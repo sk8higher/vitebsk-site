@@ -32,19 +32,19 @@ RSpec.describe BuildingsController do
     let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image1.png'), 'image/png') }
 
     it 'creates a new building and redirects to the show page' do
-      expect {
+      expect do
         post :create, params: { building: { name: created_building.name,
-                                           description: created_building.description,
-                                           photo: file } }
-      }.to change(Building, :count).by(1)
+                                            description: created_building.description,
+                                            photo: file } }
+      end.to change(Building, :count).by(1)
       expect(response).to redirect_to(assigns(:building))
     end
 
     it 'returns unprocessable_entity if building is not saved' do
       expect do
         post :create, params: { building: { name: nil,
-                                           description: nil,
-                                           photo: file } }
+                                            description: nil,
+                                            photo: file } }
       end.not_to change(Building, :count).from(0)
 
       expect(response).to have_http_status(:unprocessable_entity)
@@ -62,12 +62,13 @@ RSpec.describe BuildingsController do
 
   describe 'PATCH #update' do
     let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png') }
+
     it 'updates the building and redirects to the show page' do
       new_description = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_building.id, building: { name: Faker::Lorem.characters(number: 40),
-                                                                 description: new_description,
-                                                                 photo: file } }
+                                                                  description: new_description,
+                                                                  photo: file } }
       expect(response).to redirect_to(assigns(:building))
       saved_building.reload
       expect(saved_building.description).to eq(new_description)
@@ -75,8 +76,8 @@ RSpec.describe BuildingsController do
 
     it 'returns unprocessable entity if building is not updated' do
       patch :update, params: { id: saved_building.id, building: { name: nil,
-                                                                 description: nil,
-                                                                 photo: file } }
+                                                                  description: nil,
+                                                                  photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:edit)
@@ -86,9 +87,9 @@ RSpec.describe BuildingsController do
   describe 'DELETE #destroy' do
     it 'deletes the building and redirects to the index page' do
       delete_building = create(:building)
-      expect {
+      expect do
         delete :destroy, params: { id: delete_building.id }
-      }.to change(Building, :count).by(-1)
+      end.to change(Building, :count).by(-1)
       expect(response).to redirect_to(buildings_path)
     end
   end

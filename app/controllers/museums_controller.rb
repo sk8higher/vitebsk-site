@@ -1,19 +1,17 @@
 class MuseumsController < ApplicationController
-  before_action :set_museum, only: %i[ show edit update destroy ]
+  before_action :set_museum, only: %i[show edit update destroy]
 
   def index
     @pagy, @museums = pagy(Museum.all.order(created_at: :desc), items: 8)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @museum = Museum.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @museum = Museum.new(museum_params)

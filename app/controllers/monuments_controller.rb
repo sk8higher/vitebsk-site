@@ -5,15 +5,13 @@ class MonumentsController < ApplicationController
     @pagy, @monuments = pagy(Monument.all.order(created_at: :desc), items: 8)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @monument = Monument.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @monument = Monument.new(monument_params)

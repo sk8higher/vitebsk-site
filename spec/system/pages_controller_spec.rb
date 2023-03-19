@@ -12,37 +12,37 @@ RSpec.describe PagesController do
     categories_menu.click
   end
 
-  it 'should show page content' do
+  it 'shows page content' do
     visit root_path
     expect(page).to have_content 'Историческая справка'
   end
 
   describe '#header buttons' do
-    before(:each) do
+    before do
       visit root_path
     end
 
-    it 'should redirect to root after clicking on first navbar item' do
+    it 'redirects to root after clicking on first navbar item' do
       toggle_menu
       click_link('Главная')
       expect(page).to have_current_path(root_path)
     end
 
-    it 'should redirect to root after clicking on navbar icon' do
+    it 'redirects to root after clicking on navbar icon' do
       find(:css, '.navbar-brand > img').click
       expect(page).to have_current_path(root_path)
     end
 
-    it 'should expand menu on click' do
+    it 'expands menu on click' do
       toggle_menu
 
-      expect {
+      expect do
         toggle_categories_menu
-      }.to change { categories_menu['aria-expanded'] }.from('false').to 'true'
+      end.to change { categories_menu['aria-expanded'] }.from('false').to 'true'
     end
 
-    context 'categories menu' do
-      before(:each) do
+    describe 'categories menu' do
+      before do
         toggle_menu
         toggle_categories_menu
       end
@@ -52,32 +52,32 @@ RSpec.describe PagesController do
         category_link.click
       end
 
-      it 'should redirect to buildings path on first link click' do
+      it 'redirects to buildings path on first link click' do
         click_category_link 1
 
         expect(page).to have_current_path(buildings_path)
       end
 
-      it 'should redirect to monument path on second link click' do
+      it 'redirects to monument path on second link click' do
         click_category_link 2
 
         expect(page).to have_current_path(monuments_path)
       end
 
-      it 'should redirect to museums path on third link click' do
+      it 'redirects to museums path on third link click' do
         click_category_link 3
 
         expect(page).to have_current_path(museums_path)
       end
 
-      it 'should redirect to people path on fourth link click' do
+      it 'redirects to people path on fourth link click' do
         click_category_link 4
 
         expect(page).to have_current_path(people_path)
       end
     end
 
-    it 'should redirect to new user session path after clicking last navbar button' do
+    it 'redirects to new user session path after clicking last navbar button' do
       visit root_path
       toggle_menu
 

@@ -10,15 +10,13 @@ class PeopleController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @person = Person.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @person = Person.new(person_params)
