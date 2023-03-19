@@ -29,9 +29,5 @@ RSpec/MultipleExpectations:
 RSpec/ExampleLength:
   Max: 10
 
-# TODO: remove after adding i18n to project
-Rails/I18nLocaleTexts:
-  Enabled: false
-
 RSpec/NestedGroups:
   Max: 5
