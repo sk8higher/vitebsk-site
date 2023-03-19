@@ -50,6 +50,29 @@
           </li>
         <% end %>
       </ul>
+
+      <ul class="nav col-12 col-lg-auto mb-2 mb-md-0 mr-10">
+        <li class="dropdown">
+          <%= link_to '#', class: 'nav-link px-2 dropdown-toggle text-white p-0',
+              data: {"bs-toggle": 'dropdown'} do %>
+            <%= tag.div '', class: "flag #{I18n.locale}-flag mt-1" %>
+            <%= t I18n.locale %>
+          <% end %>
+
+          <ul class="dropdown-menu">
+            <% I18n.available_locales.each do |locale| %>
+              <li>
+                <% if I18n.locale == locale %>
+                  <%= tag.span t(locale), class: 'dropdown-item' %>
+                <% else %>
+                  <%= link_to t(locale), root_path(locale: locale),
+                      class: 'dropdown-item' %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
     </div>
     <%= image_tag("mir.jpg", alt: t('header.year_of_peace_alt_text'), width: 55, height: 65) %>
   </div>

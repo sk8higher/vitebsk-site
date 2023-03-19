@@ -1,4 +1,6 @@
 en:
+  en: 'English'
+  ru: 'Russian'
   notice:
     create:
       success: 'The article was successfully created.'

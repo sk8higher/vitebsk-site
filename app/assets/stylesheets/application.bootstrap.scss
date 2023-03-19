@@ -275,3 +275,32 @@ body {
 .imageRotateHorizontal {
   animation: flip-with-scale 3s infinite 1s linear;
 }
+
+.p-0 {
+  padding: 0px !important;
+}
+
+.flag {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(flags.png) no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.ru-flag {
+  background-position: -1px -0px;
+
+}
+.en-flag {
+  background-position: -1px -17px;
+}
+
+.nav {
+  .flag {
+    position: relative;
+    top: 2px;
+  }
+}
