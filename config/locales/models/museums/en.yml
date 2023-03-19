@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      museum: 'Museum'
+    attributes:
+      museum:
+        name: 'Name'
+        description: 'Description'
+        photo: 'Photo'
