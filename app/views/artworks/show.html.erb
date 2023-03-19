@@ -13,10 +13,10 @@
       <div class="container mt-10 mb-20">
         <div class="row">
           <div class="col text-center">
-            <%= link_to "Отредактировать работу", edit_person_artwork_path(@person, @artwork), class: 'btn btn-light-blue' %>
-            <%= link_to "Удалить работу", person_artwork_path(@person, @artwork), data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
+            <%= link_to t('.edit_this_article'), edit_person_artwork_path(@person, @artwork), class: 'btn btn-light-blue' %>
+            <%= link_to t('.delete_this_article'), person_artwork_path(@person, @artwork), data: { 'turbo-method': :delete, 'turbo-confirm': t('.delete_confirmation') }, class: 'btn btn-danger' %>
 
-            <%= link_to "Назад", person_artworks_path(@person), class: 'btn btn-outline-dark' %>
+            <%= link_to t('.back'), person_artworks_path(@person), class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>
@@ -24,12 +24,11 @@
       <div class="container mt-10 mb-20">
         <div class="row">
           <div class="col text-center">
-            <%= link_to "Вернуться на страницу автора", person_path(@person), class: 'btn btn-blue' %>
-            <%= link_to 'Назад', person_artworks_path(@person), class: 'btn btn-outline-dark' %>
+            <%= link_to t('.back_to_person'), person_path(@person), class: 'btn btn-blue' %>
+            <%= link_to t('.back'), person_artworks_path(@person), class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-

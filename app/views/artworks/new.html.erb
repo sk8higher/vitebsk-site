@@ -1,8 +1,7 @@
 <%= render 'shared/header' %>
 <div class="container d-flex flex-column align-items-center">
-  <h1 class="text-center my-15">Добавить работу</h1>
+  <h1 class="text-center my-15"><%= t('.main_text') %></h1>
 
-  <%= render "form", person: @person, artwork: @artwork, text: 'Добавить работу' %>
-  <%= link_to "Назад", person_artworks_path, class: 'btn btn-outline-dark' %>
+  <%= render "form", person: @person, artwork: @artwork, text: t('.create_article') %>
+  <%= link_to t('.back'), person_artworks_path, class: 'btn btn-outline-dark' %>
 </div>
-

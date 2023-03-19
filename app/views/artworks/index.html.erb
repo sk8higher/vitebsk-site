@@ -2,13 +2,13 @@
 
 <p class="notice"><%= notice %></p>
 
-<h1 class="text-center m-0"><%= @person.name %>: работы</h1>
+<h1 class="text-center m-0"><%= @person.name %><%= t('.main_text') %></h1>
 
 <% if can? :manage, @artworks %>
   <div class="container mt-15 mb-20">
     <div class="row">
       <div class="col text-center">
-        <%= link_to "Добавить работу", new_person_artwork_path, class: 'btn btn-blue' %>
+        <%= link_to t('.buttons.new_artwork'), new_person_artwork_path, class: 'btn btn-blue' %>
       </div>
     </div>
   </div>
@@ -17,8 +17,8 @@
 <div class="container mt-15 mb-20">
   <div class="row">
     <div class="col text-center">
-      <%= link_to "На главную", root_path, class: 'btn btn-blue' %>
-      <%= link_to "Назад", person_path(@person), class: 'btn btn-outline-dark' %>
+      <%= link_to t('.buttons.go_to_home'), root_path, class: 'btn btn-blue' %>
+      <%= link_to t('.buttons.back_to_person'), person_path(@person), class: 'btn btn-outline-dark' %>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title"><%= artwork.title %></h5>
           <p class="card-text"><%= truncate strip_tags(artwork.description), length: 160 %></p>
-          <%= link_to 'Посмотреть', person_artwork_path(@person, artwork), class: 'btn btn-light-blue mt-auto align-self-start' %>
+          <%= link_to t('.buttons.visit_artwotk'), person_artwork_path(@person, artwork), class: 'btn btn-light-blue mt-auto align-self-start' %>
         </div>
       </div>
     </div>
@@ -43,4 +43,3 @@
 <div class="container d-flex justify-content-center mt-30">
   <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} if @pagy.pages > 1 %>
 </div>
-

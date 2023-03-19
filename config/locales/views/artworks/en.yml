@@ -1,0 +1,25 @@
+en:
+  artworks:
+    index:
+      main_text: ': works'
+      buttons:
+        new_artwork: 'New artwork'
+        go_to_home: 'Home'
+        back_to_person: 'Back to person'
+        visit_artwork: 'Visit'
+    edit:
+      main_text: 'Change information about the artwork'
+      save: 'Save'
+      back: 'Back'
+    new:
+      main_text: 'New article about the artwork'
+      create_article: 'Create new artwork'
+      back: 'Back'
+    show:
+      edit_this_article: 'Edit this artwork'
+      delete_this_article: 'Delete this artwork'
+      delete_confirmation: 'Are you sure?'
+      back: 'Back'
+      back_to_person: Back to person's page
+    form:
+      errors: 'Errors:'
