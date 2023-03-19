@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      artwork: 'Artwork'
+    attributes:
+      artwork:
+        title: 'Title'
+        description: 'Description'
+        photo: 'Photo'

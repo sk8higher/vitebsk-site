@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      artwork: 'Работа'
+    attributes:
+      artwork:
+        title: 'Название'
+        description: 'Описание'
+        photo: 'Фото'
