@@ -16,7 +16,7 @@ RSpec.describe PagesController do
 
   it 'shows page content' do
     visit root_path
-    expect(page).to have_content 'Историческая справка'
+    expect(page).to have_content I18n.t('pages.index.title')
   end
 
   describe '#header buttons' do
@@ -26,7 +26,7 @@ RSpec.describe PagesController do
 
     it 'redirects to root after clicking on first navbar item' do
       toggle_menu
-      click_link('Главная')
+      click_link(I18n.t('header.home_link'))
       expect(page).to have_current_path(root_path)
     end
 
@@ -83,7 +83,7 @@ RSpec.describe PagesController do
       visit root_path
       toggle_menu
 
-      click_link('Вход для администратора')
+      click_link(I18n.t('header.admin_panel.new_session'))
 
       expect(page).to have_current_path(new_user_session_path)
     end
