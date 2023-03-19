@@ -1,0 +1,31 @@
+en:
+  people:
+    index:
+      main_text: 'Famous people of Vitebsk region'
+      buttons:
+        new_article: 'New article about the person'
+        go_to_home: 'Home'
+        visit_article: 'Visit'
+        filter:
+          show_all: 'Show all'
+          show_artists: 'Show artists'
+          show_musicians: 'Show musicians'
+          show_writers: 'Show writers'
+    edit:
+      main_text: 'Change information about the person'
+      save: 'Save'
+      back: 'Back'
+    new:
+      main_text: 'New article about the person'
+      create_article: 'Create new article'
+      back: 'Back'
+    show:
+      edit_this_article: 'Edit this article'
+      delete_this_article: 'Delete this article'
+      delete_confirmation: 'Are you sure?'
+      back: 'Back'
+      artworks:
+        show_artworks: 'Show artworks'
+        add_artwork: 'Add an artwork'
+    form:
+      errors: 'Errors:'

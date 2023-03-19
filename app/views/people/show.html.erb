@@ -11,13 +11,13 @@
       <div class="container mt-10">
         <div class="row">
           <div class="col text-center">
-            <%= link_to "Отредактировать статью", edit_person_path(@person), class: 'btn btn-light-blue' %>
-            <%= link_to "Удалить эту статью", @person, data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
+            <%= link_to t('.edit_this_article'), edit_person_path(@person), class: 'btn btn-light-blue' %>
+            <%= link_to t('.delete_this_article'), @person, data: { 'turbo-method': :delete, 'turbo-confirm': t('.delete_confirmation') }, class: 'btn btn-danger' %>
             <% unless @person.tag_id == 2 %>
-              <%= link_to 'Показать работы', person_artworks_path(@person), class: 'btn btn-blue-600' %>
-              <%= link_to 'Добавить работу', new_person_artwork_path(@person), class: 'btn btn-blue-700'  %>
+              <%= link_to t('.artworks.show_artworks'), person_artworks_path(@person), class: 'btn btn-blue-600' %>
+              <%= link_to t('.artworks.add_artwork'), new_person_artwork_path(@person), class: 'btn btn-blue-700'  %>
             <% end %>
-            <%= link_to "Назад", people_path, class: 'btn btn-outline-dark' %>
+            <%= link_to t('.back'), people_path, class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>
@@ -26,13 +26,12 @@
         <div class="row">
           <div class="col text-center">
             <% unless @person.tag_id == 2 || @person.artworks.blank? %>
-              <%= link_to 'Показать работы', person_artworks_path(@person), class: 'btn btn-blue' %>
+              <%= link_to t('.artworks.show_artworks'), person_artworks_path(@person), class: 'btn btn-blue' %>
             <% end %>
-            <%= link_to "Назад", people_path, class: 'btn btn-outline-dark' %>
+            <%= link_to t('.back'), people_path, class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-

@@ -1,0 +1,31 @@
+ru:
+  people:
+    index:
+      main_text: 'Известные люди Витебщины'
+      buttons:
+        new_article: 'Новая статья о человеке'
+        go_to_home: 'На главную'
+        visit_article: 'Посмотреть'
+        filter:
+          show_all: 'Показать всех'
+          show_artists: 'Показать художников'
+          show_musicians: 'Показать музыкантов'
+          show_writers: 'Показать писателей'
+    edit:
+      main_text: 'Изменить информацию о человеке'
+      save: 'Сохранить'
+      back: 'Назад'
+    new:
+      main_text: 'Новая статья о человеке'
+      create_article: 'Создать статью'
+      back: 'Назад'
+    show:
+      edit_this_article: 'Отредактировать статью'
+      delete_this_article: 'Удалить статью'
+      delete_confirmation: 'Вы уверены?'
+      back: 'Назад'
+      artworks:
+        show_artworks: 'Показать работы'
+        add_artwork: 'Добавить работу'
+    form:
+      errors: 'Ошибки:'
