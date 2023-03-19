@@ -37,7 +37,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -75,6 +75,8 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include Devise::Test::ControllerHelpers, type: :controller
 
+  config.use_transactional_fixtures = false
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
@@ -86,8 +88,8 @@ RSpec.configure do |config|
     end
   end
 
-  config.after(:each) do
-    DatabaseCleaner.clean
+  config.after(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
   end
 end
 
