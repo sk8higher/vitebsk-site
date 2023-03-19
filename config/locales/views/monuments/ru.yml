@@ -1,0 +1,23 @@
+ru:
+  monuments:
+    index:
+      main_text: 'Памятники Витебска'
+      buttons:
+        new_article: 'Новая статья о памятнике'
+        go_to_home: 'На главную'
+        visit_article: 'Посмотреть'
+    edit:
+      main_text: 'Изменить информацию о памятнике'
+      save: 'Сохранить'
+      back: 'Назад'
+    new:
+      main_text: 'Новая статья о памятнике'
+      create_article: 'Создать статью'
+      back: 'Назад'
+    show:
+      edit_this_article: 'Отредактировать статью'
+      delete_this_article: 'Удалить статью'
+      delete_confirmation: 'Вы уверены?'
+      back: 'Назад'
+    form:
+      errors: 'Ошибки:'
