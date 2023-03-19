@@ -1,8 +1,8 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-blue-header">
   <div class="container-fluid px-10 justify-content-center">
-    <%= link_to image_tag("vasilek.png", alt: 'Василёк', class: 'imageRotateHorizontal', width: 60, height: 60), root_path, class: 'navbar-brand mr-5' %>
+    <%= link_to image_tag("vasilek.png", alt: t('header.alt_icon_text'), class: 'imageRotateHorizontal', width: 60, height: 60), root_path, class: 'navbar-brand mr-5' %>
 
-    <%= link_to 'Витебск - мой город', root_path, class: 'navbar-brand' %>
+    <%= link_to t('header.brand_name'), root_path, class: 'navbar-brand' %>
 
     <button
       class="navbar-toggler"
@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to 'Главная', root_path, class: 'nav-link active link-unstyled' %>
+          <%= link_to t('header.home_link'), root_path, class: 'nav-link active link-unstyled' %>
         </li>
         <li class="nav-item dropdown link-unstyled">
           <a
@@ -28,29 +28,29 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
             >
-            Меню
+            <%= t('header.menu_link') %>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Значимые места города', buildings_path, class: 'dropdown-item' %></li>
+            <li><%= link_to t('header.menu.places_link'), buildings_path, class: 'dropdown-item' %></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><%= link_to 'Памятники Витебска', monuments_path, class: 'dropdown-item' %></li>
+            <li><%= link_to t('header.menu.monuments_link'), monuments_path, class: 'dropdown-item' %></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><%= link_to 'Музеи Витебска', museums_path, class: 'dropdown-item' %></li>
+            <li><%= link_to t('header.menu.museums_link'), museums_path, class: 'dropdown-item' %></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><%= link_to 'Известные люди Витебщины', people_path, class: 'dropdown-item' %></li>
+            <li><%= link_to t('header.menu.famous_people_link'), people_path, class: 'dropdown-item' %></li>
           </ul>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'Выйти', destroy_user_session_path, data: { 'turbo-method': :delete }, class: 'nav-link active link-unstyled' %>
+            <%= link_to t('header.admin_panel.destroy_session'), destroy_user_session_path, data: { 'turbo-method': :delete }, class: 'nav-link active link-unstyled' %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to 'Вход для администратора', new_user_session_path, class: 'nav-link active link-unstyled' %>
+            <%= link_to t('header.admin_panel.new_session'), new_user_session_path, class: 'nav-link active link-unstyled' %>
           </li>
         <% end %>
       </ul>
     </div>
-    <%= image_tag("mir.jpg", alt: 'Год мира и созидания', width: 55, height: 65) %>
+    <%= image_tag("mir.jpg", alt: t('header.year_of_peace_alt_text'), width: 55, height: 65) %>
   </div>
 </nav>
