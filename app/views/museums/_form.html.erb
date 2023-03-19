@@ -1,7 +1,7 @@
 <%= form_with(model: museum, data: { turbo: false }, class: 'form-width-avg') do |form| %>
   <% if museum.errors.any? %>
     <div style="color: red">
-      <h2>Ошибки:</h2>
+      <h2><%= t('.errors') %></h2>
       <ul>
         <% museum.errors.each do |error| %>
           <li><%= error.full_message %></li>

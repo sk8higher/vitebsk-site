@@ -11,10 +11,10 @@
       <div class="container mt-10">
         <div class="row">
           <div class="col text-center">
-            <%= link_to "Отредактировать статью", edit_museum_path(@museum), class: 'btn btn-light-blue' %>
-            <%= link_to "Удалить эту статью", @museum, data: { 'turbo-method': :delete, 'turbo-confirm': 'Вы уверены?' }, class: 'btn btn-danger' %>
+            <%= link_to t('.edit_this_article'), edit_museum_path(@museum), class: 'btn btn-light-blue' %>
+            <%= link_to t('.delete_this_article'), @museum, data: { 'turbo-method': :delete, 'turbo-confirm': t('.delete_confirmation') }, class: 'btn btn-danger' %>
 
-            <%= link_to "Назад", museums_path, class: 'btn btn-outline-dark' %>
+            <%= link_to t('.back'), museums_path, class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>
@@ -22,11 +22,10 @@
       <div class="container mt-10 mb-20">
         <div class="row">
           <div class="col text-center">
-            <%= link_to "Назад", museums_path, class: 'btn btn-outline-dark' %>
+            <%= link_to t('.back'), museums_path, class: 'btn btn-outline-dark' %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
