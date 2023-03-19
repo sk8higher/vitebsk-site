@@ -17,6 +17,7 @@ AllCops:
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-capybara
 
 Style/Documentation:
   Enabled: false
