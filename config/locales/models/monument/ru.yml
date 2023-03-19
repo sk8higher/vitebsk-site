@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      monument: 'Памятник'
+    attributes:
+      monument:
+        name: 'Название'
+        description: 'Описание'
+        photo: 'Фото'
