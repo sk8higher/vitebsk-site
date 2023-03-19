@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      person: 'Person'
+    attributes:
+      person:
+        name: 'Name'
+        bio: 'Biography'
+        photo: 'Photo'

@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      person: 'Человек'
+    attributes:
+      museum:
+        name: 'Имя'
+        bio: 'Биография'
+        photo: 'Фото'
