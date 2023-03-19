@@ -20,7 +20,7 @@ class ArtworksController < ApplicationController
     @artwork = @person.artworks.build(artwork_params)
 
     if @artwork.save
-      redirect_to person_artwork_path(@person, @artwork), notice: t('notice.create.success') 
+      redirect_to person_artwork_path(@person, @artwork), notice: t('notice.create.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork.destroy
 
-    redirect_to person_artworks_path(@person), notice: t('notice.destroy.success') 
+    redirect_to person_artworks_path(@person), notice: t('notice.destroy.success')
   end
 
   private
