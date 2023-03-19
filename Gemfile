@@ -93,3 +93,5 @@ gem 'pagy'
 gem 'rubocop', '~> 1.48', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
+
+gem 'rails-i18n', '~> 7.0', '>= 7.0.6'
