@@ -16,6 +16,7 @@ module VitebskSite
     config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :en
 
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

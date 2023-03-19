@@ -1,0 +1,15 @@
+en:
+  header:
+    brand_name: Vitebsk's soul
+    alt_icon_text: 'Cornflower'
+    home_link: 'Home'
+    menu_link: 'Menu'
+    menu:
+      places_link: 'Significant places of the city'
+      monuments_link: 'Monuments in Vitebsk'
+      museums_link: 'Museums in Vitebsk'
+      famous_people_link: 'Famous people of Vitebsk region'
+    admin_panel:
+      destroy_session: 'Log out'
+      new_session: 'Admin login'
+    year_of_peace_alt_text: 'The Year of Peace and Creation'

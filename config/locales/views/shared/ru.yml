@@ -1,0 +1,15 @@
+ru:
+  header:
+    brand_name: 'Витебск - мой город'
+    alt_icon_text: 'Василек'
+    home_link: 'Главная'
+    menu_link: 'Меню'
+    menu:
+      places_link: 'Значимые места города'
+      monuments_link: 'Памятники Витебска'
+      museums_link: 'Музеи Витебска'
+      famous_people_link: 'Известные люди Витебщины'
+    admin_panel:
+      destroy_session: 'Выйти'
+      new_session: 'Вход для администратора'
+    year_of_peace_alt_text: 'Год мира и созидания'
