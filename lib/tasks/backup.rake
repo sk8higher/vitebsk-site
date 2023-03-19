@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :mockdb do
   sqlite_path = '/usr/bin/sqlite3'
   sql_file = 'db/production.sqlite3'

@@ -63,7 +63,7 @@ RSpec.describe PeopleController do
 
   describe 'POST #create' do
     it 'creates a new person and redirects to the show page' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image4.jpg'), 'image/png')
+      file = fixture_file_upload(Rails.root.join('spec/fixtures/image4.jpg'), 'image/png')
       expect do
         post :create, params: { person: { name: created_person.name,
                                           bio: created_person.bio,
@@ -74,7 +74,7 @@ RSpec.describe PeopleController do
     end
 
     it 'returns unprocessable_entity if person is not saved' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
+      file = fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png')
       expect do
         post :create, params: { id: created_person.id, person: { name: nil,
                                                                  bio: nil,
@@ -96,7 +96,7 @@ RSpec.describe PeopleController do
 
   describe 'PATCH #update' do
     it 'updates the person and redirects to the show page' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
+      file = fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png')
       new_bio = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_person.id, person: { name: Faker::Lorem.characters(number: 40),
@@ -108,7 +108,7 @@ RSpec.describe PeopleController do
     end
 
     it 'returns unprocessable entity if person is not updated' do
-      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png')
+      file = fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png')
       patch :update, params: { id: saved_person.id, person: { name: nil,
                                                               bio: nil,
                                                               photo: file } }

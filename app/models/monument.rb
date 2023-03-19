@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Monument < ApplicationRecord
   include Pagy::Backend
 

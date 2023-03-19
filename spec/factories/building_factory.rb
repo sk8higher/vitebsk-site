@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'faker'
 
 FactoryBot.define do
   factory :building do
-    link_to_default_image = "#{Rails.root}/spec/files/images/image1.png"
+    link_to_default_image = Rails.root.join('spec/files/images/image1.png')
     photo { Rack::Test::UploadedFile.new link_to_default_image, 'image/png' }
     name { Faker::Lorem.characters(number: 10) }
     description { Faker::Lorem.characters(number: 15) }

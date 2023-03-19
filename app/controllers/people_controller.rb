@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[show edit update destroy]
   before_action :set_tags

@@ -3,10 +3,11 @@ require_relative '../rails_helper'
 RSpec.describe ArtworksController do
   let(:tag) { create(:tag) }
   let(:saved_person) { create(:person, tag_id: tag.id) }
-  let(:created_person) { build(:person, tag_id: tag.id) }
 
   let(:saved_artwork) { create(:artwork, person_id: saved_person.id) }
   let(:created_artwork) { build(:artwork, person_id: saved_person.id) }
+
+  let(:file) { fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png') }
 
   describe 'GET #index' do
     it 'returns http success and renders the index template' do
@@ -33,8 +34,6 @@ RSpec.describe ArtworksController do
   end
 
   describe 'POST #create' do
-    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image6.jpg'), 'image/png') }
-
     it 'creates a new artwork and redirects to the show page' do
       expect do
         post :create, params: { person_id: saved_person.id, artwork: { title: created_artwork.title,
@@ -65,8 +64,6 @@ RSpec.describe ArtworksController do
   end
 
   describe 'PATCH #update' do
-    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png') }
-
     it 'updates the artwork and redirects to the show page' do
       new_desc = Faker::Lorem.characters(number: 40)
 

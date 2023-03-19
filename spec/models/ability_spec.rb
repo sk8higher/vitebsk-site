@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require_relative '../rails_helper'
 require 'cancan/matchers'
 
-RSpec.describe Ability, type: :model do
+RSpec.describe Ability do
   describe 'abilities' do
     subject(:ability) { described_class.new(user) }
 

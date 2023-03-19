@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../rails_helper'
 require 'faker'
 
@@ -6,7 +8,7 @@ RSpec.describe Artwork do
   let(:person) { create(:person, tag_id: tag.id) }
   let(:artwork) { create(:artwork, person_id: person.id) }
 
-  context 'model validations' do
+  describe 'model validations' do
     it { is_expected.to have_one_attached :photo }
     it { is_expected.to belong_to :person }
 
@@ -22,7 +24,7 @@ RSpec.describe Artwork do
       expect(artwork).to be_valid
     end
 
-    context 'attribute presence' do
+    describe 'attribute presence' do
       it 'is valid without photo' do
         artwork.photo = nil
         expect(artwork).to be_valid
@@ -45,7 +47,7 @@ RSpec.describe Artwork do
     end
 
     describe 'attribute length' do
-      context 'title length validation' do
+      describe 'title length validation' do
         it 'is not valid with a title less than 3 symbols' do
           artwork.title = Faker::Lorem.characters(number: 2)
           expect(artwork).not_to be_valid
@@ -57,7 +59,7 @@ RSpec.describe Artwork do
         end
       end
 
-      context 'description length validation' do
+      describe 'description length validation' do
         it 'is not valid with a description less than 5 symbols' do
           artwork.description = Faker::Lorem.characters(number: 2)
           expect(artwork).not_to be_valid

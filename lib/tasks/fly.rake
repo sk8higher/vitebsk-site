@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # commands used to deploy a Rails application
 namespace :fly do
   # BUILD step:
@@ -27,6 +29,8 @@ namespace :fly do
   #    point where swap is rarely used.  'fly scale help' for details.
   #  - disable by removing dependency on the :server task, thus:
   #        task :server do
+
+  # rubocop:disable Rails/RakeEnvironment
   task :swapfile do
     sh 'fallocate -l 512M /swapfile'
     sh 'chmod 0600 /swapfile'
@@ -34,4 +38,5 @@ namespace :fly do
     sh 'echo 10 > /proc/sys/vm/swappiness'
     sh 'swapon /swapfile'
   end
+  # rubocop:enable Rails/RakeEnvironment
 end

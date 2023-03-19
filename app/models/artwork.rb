@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Artwork < ApplicationRecord
   include Pagy::Backend
 

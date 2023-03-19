@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MonumentsController < ApplicationController
   before_action :set_monument, only: %i[show edit update destroy]
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Building < ApplicationRecord
   include Pagy::Backend
 

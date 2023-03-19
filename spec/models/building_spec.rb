@@ -3,7 +3,7 @@ require_relative '../rails_helper'
 RSpec.describe Building do
   let(:building) { create(:building) }
 
-  context 'model validations' do
+  describe 'model validations' do
     it { is_expected.to have_one_attached :photo }
 
     it { is_expected.to validate_length_of(:name).is_at_least(3).is_at_most(70) }
@@ -22,7 +22,7 @@ RSpec.describe Building do
       expect(building).to be_valid
     end
 
-    context 'attribute presence' do
+    describe 'attribute presence' do
       it 'is not valid without photo' do
         building.photo = nil
         expect(building).not_to be_valid
@@ -40,7 +40,7 @@ RSpec.describe Building do
     end
 
     describe 'attribute length' do
-      context 'name length validation' do
+      describe 'name length validation' do
         it 'is not valid with a name less than 3 symbols' do
           building.name = Faker::Lorem.characters(number: 2)
           expect(building).not_to be_valid
@@ -52,7 +52,7 @@ RSpec.describe Building do
         end
       end
 
-      context 'description length validation' do
+      describe 'description length validation' do
         it 'is not valid with a description less than 5 symbols' do
           building.description = Faker::Lorem.characters(number: 3)
           expect(building).not_to be_valid

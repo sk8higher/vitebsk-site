@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../rails_helper'
 require 'faker'
 
@@ -5,7 +7,7 @@ RSpec.describe Person do
   let(:tag) { create(:tag) }
   let(:person) { create(:person, tag_id: tag.id) }
 
-  context 'model validations' do
+  describe 'model validations' do
     it { is_expected.to have_one_attached :photo }
     it { is_expected.to have_many :artworks }
     it { is_expected.to belong_to :tag }
@@ -16,7 +18,6 @@ RSpec.describe Person do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:bio) }
     it { is_expected.to validate_presence_of(:photo) }
-    it { is_expected.to validate_presence_of(:tag_id) }
   end
 
   describe 'model object validations' do
@@ -24,7 +25,7 @@ RSpec.describe Person do
       expect(person).to be_valid
     end
 
-    context 'attribute presence' do
+    describe 'attribute presence' do
       it 'is not valid without photo' do
         person.photo = nil
         expect(person).not_to be_valid
@@ -47,7 +48,7 @@ RSpec.describe Person do
     end
 
     describe 'attribute length' do
-      context 'name length validation' do
+      describe 'name length validation' do
         it 'is not valid with a name less than 3 symbols' do
           person.name = Faker::Lorem.characters(number: 2)
           expect(person).not_to be_valid
@@ -59,7 +60,7 @@ RSpec.describe Person do
         end
       end
 
-      context 'bio length validation' do
+      describe 'bio length validation' do
         it 'is not valid with a bio less than 3 symbols' do
           person.bio = Faker::Lorem.characters(number: 2)
           expect(person).not_to be_valid

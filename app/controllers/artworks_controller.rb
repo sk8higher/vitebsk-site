@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ArtworksController < ApplicationController
-  before_action :get_person
+  before_action :set_person
   before_action :set_artwork, only: %i[show edit update destroy]
 
   def index
@@ -40,7 +42,7 @@ class ArtworksController < ApplicationController
 
   private
 
-  def get_person
+  def set_person
     @person = Person.find(params[:person_id])
   end
 

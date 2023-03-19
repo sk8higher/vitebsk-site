@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MuseumsController < ApplicationController
   before_action :set_museum, only: %i[show edit update destroy]
 

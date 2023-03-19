@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BuildingsController < ApplicationController
   before_action :set_building, only: %i[show edit update destroy]
 

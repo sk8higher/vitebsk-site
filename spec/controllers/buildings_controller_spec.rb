@@ -29,7 +29,7 @@ RSpec.describe BuildingsController do
   end
 
   describe 'POST #create' do
-    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image1.png'), 'image/png') }
+    let(:file) { fixture_file_upload(Rails.root.join('spec/fixtures/image1.png'), 'image/png') }
 
     it 'creates a new building and redirects to the show page' do
       expect do
@@ -61,7 +61,7 @@ RSpec.describe BuildingsController do
   end
 
   describe 'PATCH #update' do
-    let(:file) { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'image2.png'), 'image/png') }
+    let(:file) { fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png') }
 
     it 'updates the building and redirects to the show page' do
       new_description = Faker::Lorem.characters(number: 40)

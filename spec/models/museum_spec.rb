@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require_relative '../rails_helper'
 require 'faker'
 
 RSpec.describe Museum do
   let(:museum) { create(:museum) }
 
-  context 'model validations' do
+  describe 'model validations' do
     it { is_expected.to have_one_attached :photo }
 
     it { is_expected.to validate_length_of(:name).is_at_least(3).is_at_most(70) }
@@ -23,7 +25,7 @@ RSpec.describe Museum do
       expect(museum).to be_valid
     end
 
-    context 'attribute presence' do
+    describe 'attribute presence' do
       it 'is not valid without photo' do
         museum.photo = nil
         expect(museum).not_to be_valid
@@ -41,7 +43,7 @@ RSpec.describe Museum do
     end
 
     describe 'attribute length' do
-      context 'name length validation' do
+      describe 'name length validation' do
         it 'is not valid with a name less than 3 symbols' do
           museum.name = Faker::Lorem.characters(number: 2)
           expect(museum).not_to be_valid
@@ -53,7 +55,7 @@ RSpec.describe Museum do
         end
       end
 
-      context 'description length validation' do
+      describe 'description length validation' do
         it 'is not valid with a name less than 5 symbols' do
           museum.description = Faker::Lorem.characters(number: 3)
           expect(museum).not_to be_valid
