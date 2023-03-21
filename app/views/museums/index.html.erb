@@ -8,7 +8,7 @@
   <div class="container mt-15 mb-20">
     <div class="row">
       <div class="col text-center">
-        <%= link_to t('.new_article'), new_museum_path, class: 'btn btn-blue' %>
+        <%= link_to t('.buttons.new_article'), new_museum_path, class: 'btn btn-blue' %>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 <div class="container mt-15 mb-20">
   <div class="row">
     <div class="col text-center">
-      <%= link_to t('.go_to_home'), root_path, class: 'btn btn-blue' %>
+      <%= link_to t('.buttons.go_to_home'), root_path, class: 'btn btn-blue' %>
     </div>
   </div>
 </div>
@@ -30,7 +30,7 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title"><%= museum.name %></h5>
           <p class="card-text"><%= truncate strip_tags(museum.description), length: 160 %></p>
-          <%= link_to t('.visit_article'), museum_path(museum), class: 'btn btn-light-blue mt-auto align-self-start' %>
+          <%= link_to t('.buttons.visit_article'), museum_path(museum), class: 'btn btn-light-blue mt-auto align-self-start' %>
         </div>
       </div>
     </div>

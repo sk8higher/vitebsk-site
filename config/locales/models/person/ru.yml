@@ -3,7 +3,7 @@ ru:
     models:
       person: "Человек"
     attributes:
-      museum:
+      person:
         name: "Имя"
         name_en: "Имя (Английский)"
         name_ru: "Имя (Русский)"
