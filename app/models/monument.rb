@@ -4,8 +4,8 @@ class Monument < ApplicationRecord
   include Pagy::Backend
   extend Mobility
 
-  translates :name, type: :string, column_fallback: [:ru, :en]
-  translates :description, type: :string, column_fallback: [:ru, :en]
+  translates :name, type: :string, column_fallback: %i[ru en]
+  translates :description, type: :string, column_fallback: %i[ru en]
 
   has_one_attached :photo
 
