@@ -46,6 +46,8 @@ class BuildingsController < ApplicationController
   end
 
   def building_params
-    params.require(:building).permit(:name, :description, :photo)
+    params.require(:building).permit(I18n.available_locales.map do |l|
+      [:"name_#{Mobility.normalize_locale(l)}", :"description_#{Mobility.normalize_locale(l)}"]
+    end.flatten, :photo)
   end
 end

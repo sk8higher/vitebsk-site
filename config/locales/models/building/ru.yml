@@ -5,5 +5,9 @@ ru:
     attributes:
       building:
         name: 'Название'
+        name_en: 'Название (Английский)'
+        name_ru: 'Название (Русский)'
         description: 'Описание'
+        description_en: 'Описание (Английский)'
+        description_ru: 'Описание (Русский)'
         photo: 'Фото'
