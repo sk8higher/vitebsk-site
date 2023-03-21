@@ -1,9 +1,13 @@
 ru:
   activerecord:
     models:
-      person: 'Человек'
+      person: "Человек"
     attributes:
       museum:
-        name: 'Имя'
-        bio: 'Биография'
-        photo: 'Фото'
+        name: "Имя"
+        name_en: "Имя (Английский)"
+        name_ru: "Имя (Русский)"
+        bio: "Биография"
+        bio_en: "Биография (Английский)"
+        bio_ru: "Биография (Русский)"
+        photo: "Фото"

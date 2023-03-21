@@ -55,6 +55,8 @@ class PeopleController < ApplicationController
   end
 
   def person_params
-    params.require(:person).permit(:name, :bio, :photo, :tag_id)
+    params.require(:person).permit(I18n.available_locales.map do |l|
+      [:"name_#{Mobility.normalize_locale(l)}", :"bio_#{Mobulity.normalize_locale(l)}"]
+    end.flatten, :photo, :tag_id)
   end
 end

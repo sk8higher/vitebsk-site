@@ -2,6 +2,10 @@
 
 class Museum < ApplicationRecord
   include Pagy::Backend
+  extend Mobility
+
+  translates :name, type: :string, column_fallback: %i[ru]
+  translates :description, type: :string, column_fallback: %i[ru]
 
   has_one_attached :photo
 

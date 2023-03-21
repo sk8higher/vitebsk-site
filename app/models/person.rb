@@ -2,6 +2,10 @@
 
 class Person < ApplicationRecord
   include Pagy::Backend
+  extend Mobility
+
+  translates :name, type: :string, column_fallback: %i[ru]
+  translates :bio, type: :string, column_fallback: %i[ru]
 
   scope :tag, ->(tag) { where(tag:) }
 

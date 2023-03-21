@@ -46,6 +46,8 @@ class MuseumsController < ApplicationController
   end
 
   def museum_params
-    params.require(:museum).permit(:name, :description, :photo)
+    params.require(:museum).permit(I18n.available_locales.map do |l|
+      [:"name_#{Mobility.normalize_locale(l)}", :"description_#{Mobility.normalize_locale(l)}"]
+    end.flatten, :photo)
   end
 end

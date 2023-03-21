@@ -1,9 +1,13 @@
 en:
   activerecord:
     models:
-      person: 'Person'
+      person: "Person"
     attributes:
       person:
-        name: 'Name'
-        bio: 'Biography'
-        photo: 'Photo'
+        name: "Name"
+        name_en: "Name (English)"
+        name_ru: "Name (Russian)"
+        bio: "Biography"
+        bio_en: "Biography (English)"
+        bio_ru: "Biography (Russian)"
+        photo: "Photo"
