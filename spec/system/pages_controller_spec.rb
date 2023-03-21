@@ -32,7 +32,7 @@ RSpec.describe PagesController do
 
     it 'redirects to root after clicking on navbar icon' do
       find(:css, '.navbar-brand > img').click
-      expect(page).to have_current_path(root_path)
+      expect(page).to have_current_path(root_path(locale: I18n.default_locale))
     end
 
     it 'expands menu on click' do
@@ -57,25 +57,25 @@ RSpec.describe PagesController do
       it 'redirects to buildings path on first link click' do
         click_category_link 1
 
-        expect(page).to have_current_path(buildings_path)
+        expect(page).to have_current_path(buildings_path(locale: I18n.default_locale))
       end
 
       it 'redirects to monument path on second link click' do
         click_category_link 2
 
-        expect(page).to have_current_path(monuments_path)
+        expect(page).to have_current_path(monuments_path(locale: I18n.default_locale))
       end
 
       it 'redirects to museums path on third link click' do
         click_category_link 3
 
-        expect(page).to have_current_path(museums_path)
+        expect(page).to have_current_path(museums_path(locale: I18n.default_locale))
       end
 
       it 'redirects to people path on fourth link click' do
         click_category_link 4
 
-        expect(page).to have_current_path(people_path)
+        expect(page).to have_current_path(people_path(locale: I18n.default_locale))
       end
     end
 
@@ -85,7 +85,7 @@ RSpec.describe PagesController do
 
       click_link(I18n.t('header.admin_panel.new_session'))
 
-      expect(page).to have_current_path(new_user_session_path)
+      expect(page).to have_current_path(new_user_session_path(locale: I18n.default_locale))
     end
   end
 end
