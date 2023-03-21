@@ -46,6 +46,8 @@ class MonumentsController < ApplicationController
   end
 
   def monument_params
-    params.require(:monument).permit(:name, :description, :photo)
+    params.require(:monument).permit(I18n.available_locales.map do |l|
+      [:"name_#{Mobility.normalize_locale(l)}", :"description_#{Mobility.normalize_locale(l)}"]
+    end.flatten, :photo)
   end
 end

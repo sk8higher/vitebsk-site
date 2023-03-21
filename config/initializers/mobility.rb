@@ -62,7 +62,7 @@ Mobility.configure do
     # Fallbacks
     #
     # Uncomment line below to enable fallbacks, using +I18n.fallbacks+.
-    # fallbacks
+    fallbacks
     #
     # Or uncomment this line to enable fallbacks with a global default.
     # fallbacks { :pt => :en }
@@ -112,5 +112,6 @@ Mobility.configure do
     # this plugin can create conflicts with other gems.
     #
     # attribute_methods
+    column_fallback
   end
 end
