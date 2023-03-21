@@ -1,25 +1,25 @@
 ru:
   artworks:
     index:
-      main_text: ': работы'
+      main_text: ": работы"
       buttons:
-        new_article: 'Новая работа'
-        go_to_home: 'На главную'
-        back_to_person: 'Вернуться на страницу автора'
-        visit_article: 'Посмотреть'
+        new_artwork: "Новая работа"
+        go_to_home: "На главную"
+        back_to_person: "Вернуться на страницу автора"
+        visit_artwork: "Посмотреть"
     edit:
-      main_text: 'Изменить информацию о работе'
-      save: 'Сохранить'
-      back: 'Назад'
+      main_text: "Изменить информацию о работе"
+      save: "Сохранить"
+      back: "Назад"
     new:
-      main_text: 'Новая работа'
-      create_article: 'Создать работу'
-      back: 'Назад'
+      main_text: "Новая работа"
+      create_article: "Создать работу"
+      back: "Назад"
     show:
-      edit_this_article: 'Отредактировать работу'
-      delete_this_article: 'Удалить работу'
-      delete_confirmation: 'Вы уверены?'
-      back: 'Назад'
-      back_to_person: 'Вернуться на страницу автора'
+      edit_this_article: "Отредактировать работу"
+      delete_this_article: "Удалить работу"
+      delete_confirmation: "Вы уверены?"
+      back: "Назад"
+      back_to_person: "Вернуться на страницу автора"
     form:
-      errors: 'Ошибки:'
+      errors: "Ошибки:"

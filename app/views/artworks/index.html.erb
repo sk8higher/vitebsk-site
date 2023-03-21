@@ -33,7 +33,7 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title"><%= artwork.title %></h5>
           <p class="card-text"><%= truncate strip_tags(artwork.description), length: 160 %></p>
-          <%= link_to t('.buttons.visit_artwotk'), person_artwork_path(@person, artwork), class: 'btn btn-light-blue mt-auto align-self-start' %>
+          <%= link_to t('.buttons.visit_artwork'), person_artwork_path(@person, artwork), class: 'btn btn-light-blue mt-auto align-self-start' %>
         </div>
       </div>
     </div>
