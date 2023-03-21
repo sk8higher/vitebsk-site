@@ -51,6 +51,8 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:artwork).permit(:title, :description, :photo)
+    params.require(:artwork).permit(I18n.available_locales.map do |l|
+      [:"title_#{Mobility.normalize_locale(l)}", :"description_#{Mobility.normalize_locale(l)}"]
+    end.flatten, :photo)
   end
 end

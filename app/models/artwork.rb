@@ -2,6 +2,10 @@
 
 class Artwork < ApplicationRecord
   include Pagy::Backend
+  extend Mobility
+
+  translates :title, type: :string, column_fallback: %i[ru]
+  translates :description, type: :string, column_fallback: %i[ru]
 
   belongs_to :person
 

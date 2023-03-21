@@ -1,9 +1,13 @@
 ru:
   activerecord:
     models:
-      artwork: 'Работа'
+      artwork: "Работа"
     attributes:
       artwork:
-        title: 'Название'
-        description: 'Описание'
-        photo: 'Фото'
+        title: "Название"
+        title_en: "Название (Английский)"
+        title_ru: "Название (Русский)"
+        description: "Описание"
+        description_en: "Описание (Английский)"
+        description_ru: "Описание (Русский)"
+        photo: "Фото"
