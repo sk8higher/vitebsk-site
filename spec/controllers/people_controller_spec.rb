@@ -67,8 +67,10 @@ RSpec.describe PeopleController do
     it 'creates a new person and redirects to the show page' do
       file = fixture_file_upload(Rails.root.join('spec/fixtures/image4.jpg'), 'image/png')
       expect do
-        post :create, params: { person: { name: created_person.name,
-                                          bio: created_person.bio,
+        post :create, params: { person: { name_ru: created_person.name_ru,
+                                          name_en: created_person.name_en,
+                                          bio_ru: created_person.bio_ru,
+                                          bio_en: created_person.bio_en,
                                           photo: file,
                                           tag_id: tag.id } }
       end.to change(Person, :count).by(1)
@@ -78,8 +80,8 @@ RSpec.describe PeopleController do
     it 'returns unprocessable_entity if person is not saved' do
       file = fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png')
       expect do
-        post :create, params: { id: created_person.id, person: { name: nil,
-                                                                 bio: nil,
+        post :create, params: { id: created_person.id, person: { name_ru: nil,
+                                                                 bio_ru: nil,
                                                                  photo: file } }
       end.not_to change(Person, :count).from(0)
 
@@ -101,18 +103,18 @@ RSpec.describe PeopleController do
       file = fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png')
       new_bio = Faker::Lorem.characters(number: 40)
 
-      patch :update, params: { id: saved_person.id, person: { name: Faker::Lorem.characters(number: 40),
-                                                              bio: new_bio,
+      patch :update, params: { id: saved_person.id, person: { name_ru: Faker::Lorem.characters(number: 40),
+                                                              bio_ru: new_bio,
                                                               photo: file } }
       expect(response).to redirect_to(assigns(:person))
       saved_person.reload
-      expect(saved_person.bio).to eq(new_bio)
+      expect(saved_person.bio_ru).to eq(new_bio)
     end
 
     it 'returns unprocessable entity if person is not updated' do
       file = fixture_file_upload(Rails.root.join('spec/fixtures/image2.png'), 'image/png')
-      patch :update, params: { id: saved_person.id, person: { name: nil,
-                                                              bio: nil,
+      patch :update, params: { id: saved_person.id, person: { name_ru: nil,
+                                                              bio_ru: nil,
                                                               photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
