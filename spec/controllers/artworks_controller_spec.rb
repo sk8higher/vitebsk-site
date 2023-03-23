@@ -38,8 +38,10 @@ RSpec.describe ArtworksController do
   describe 'POST #create' do
     it 'creates a new artwork and redirects to the show page' do
       expect do
-        post :create, params: { person_id: saved_person.id, artwork: { title: created_artwork.title,
-                                                                       description: created_artwork.description,
+        post :create, params: { person_id: saved_person.id, artwork: { title_ru: created_artwork.title_ru,
+                                                                       title_en: created_artwork.title_en,
+                                                                       description_ru: created_artwork.description_ru,
+                                                                       description_en: created_artwork.description_en,
                                                                        photo: file } }
       end.to change(Artwork, :count).by(1)
       expect(response).to redirect_to(person_artwork_path(saved_person, Artwork.last))
@@ -47,8 +49,8 @@ RSpec.describe ArtworksController do
 
     it 'returns unprocessable entity if artwork is not saved' do
       expect do
-        post :create, params: { person_id: saved_person.id, artwork: { title: nil,
-                                                                       description: nil,
+        post :create, params: { person_id: saved_person.id, artwork: { title_ru: nil,
+                                                                       description_ru: nil,
                                                                        photo: file } }
       end.not_to change(Artwork, :count).from(0)
 
@@ -71,18 +73,18 @@ RSpec.describe ArtworksController do
 
       patch :update, params: { person_id: saved_person.id,
                                id: saved_artwork.id,
-                               artwork: { title: Faker::Lorem.characters(number: 40), description: new_desc,
+                               artwork: { title_ru: Faker::Lorem.characters(number: 40), description_ru: new_desc,
                                           photo: file } }
       expect(response).to redirect_to(person_artwork_path(saved_person, saved_artwork))
       saved_artwork.reload
-      expect(saved_artwork.description).to eq(new_desc)
+      expect(saved_artwork.description_ru).to eq(new_desc)
     end
 
     it 'returns unprocessable entity if artwork is not updated' do
       patch :update, params: { person_id: saved_person.id,
                                id: saved_artwork.id,
-                               artwork: { name: nil,
-                                          description: nil,
+                               artwork: { name_ru: nil,
+                                          description_ru: nil,
                                           photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
