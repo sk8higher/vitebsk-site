@@ -73,8 +73,10 @@ RSpec.describe ArtworksController do
 
       patch :update, params: { person_id: saved_person.id,
                                id: saved_artwork.id,
-                               artwork: { title_ru: Faker::Lorem.characters(number: 40), description_ru: new_desc,
+                               artwork: { title_ru: Faker::Lorem.characters(number: 40),
+                                          description_ru: new_desc,
                                           photo: file } }
+
       expect(response).to redirect_to(person_artwork_path(saved_person, saved_artwork))
       saved_artwork.reload
       expect(saved_artwork.description_ru).to eq(new_desc)

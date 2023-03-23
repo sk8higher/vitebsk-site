@@ -35,8 +35,10 @@ RSpec.describe BuildingsController do
 
     it 'creates a new building and redirects to the show page' do
       expect do
-        post :create, params: { building: { name: created_building.name,
-                                            description: created_building.description,
+        post :create, params: { building: { name_ru: created_building.name_ru,
+                                            name_en: created_building.name_en,
+                                            description_ru: created_building.description_ru,
+                                            description_en: created_building.description_en,
                                             photo: file } }
       end.to change(Building, :count).by(1)
       expect(response).to redirect_to(assigns(:building))
@@ -44,8 +46,8 @@ RSpec.describe BuildingsController do
 
     it 'returns unprocessable_entity if building is not saved' do
       expect do
-        post :create, params: { building: { name: nil,
-                                            description: nil,
+        post :create, params: { building: { name_ru: nil,
+                                            description_ru: nil,
                                             photo: file } }
       end.not_to change(Building, :count).from(0)
 
@@ -68,17 +70,17 @@ RSpec.describe BuildingsController do
     it 'updates the building and redirects to the show page' do
       new_description = Faker::Lorem.characters(number: 40)
 
-      patch :update, params: { id: saved_building.id, building: { name: Faker::Lorem.characters(number: 40),
-                                                                  description: new_description,
+      patch :update, params: { id: saved_building.id, building: { name_ru: Faker::Lorem.characters(number: 40),
+                                                                  description_ru: new_description,
                                                                   photo: file } }
       expect(response).to redirect_to(assigns(:building))
       saved_building.reload
-      expect(saved_building.description).to eq(new_description)
+      expect(saved_building.description_ru).to eq(new_description)
     end
 
     it 'returns unprocessable entity if building is not updated' do
-      patch :update, params: { id: saved_building.id, building: { name: nil,
-                                                                  description: nil,
+      patch :update, params: { id: saved_building.id, building: { name_ru: nil,
+                                                                  description_ru: nil,
                                                                   photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
