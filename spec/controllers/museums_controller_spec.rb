@@ -35,8 +35,10 @@ RSpec.describe MuseumsController do
 
     it 'creates a new museum and redirects to the show page' do
       expect do
-        post :create, params: { museum: { name: created_museum.name,
-                                          description: created_museum.description,
+        post :create, params: { museum: { name_ru: created_museum.name_ru,
+                                          name_en: created_museum.name_en,
+                                          description_ru: created_museum.description_ru,
+                                          description_en: created_museum.description_en,
                                           photo: file } }
       end.to change(Museum, :count).by(1)
       expect(response).to redirect_to(assigns(:museum))
@@ -44,8 +46,8 @@ RSpec.describe MuseumsController do
 
     it 'returns unprocessable entity if museum is not saved' do
       expect do
-        post :create, params: { museum: { name: nil,
-                                          description: nil,
+        post :create, params: { museum: { name_ru: nil,
+                                          description_en: nil,
                                           photo: file } }
       end.not_to change(Museum, :count).from(0)
 
@@ -68,17 +70,17 @@ RSpec.describe MuseumsController do
     it 'updates the museum and redirects to the show page' do
       new_description = Faker::Lorem.characters(number: 40)
 
-      patch :update, params: { id: saved_museum.id, museum: { name: Faker::Lorem.characters(number: 40),
-                                                              description: new_description,
+      patch :update, params: { id: saved_museum.id, museum: { name_ru: Faker::Lorem.characters(number: 40),
+                                                              description_ru: new_description,
                                                               photo: file } }
       expect(response).to redirect_to(assigns(:museum))
       saved_museum.reload
-      expect(saved_museum.description).to eq(new_description)
+      expect(saved_museum.description_ru).to eq(new_description)
     end
 
     it 'returns unprocessable entity if museum is not updated' do
-      patch :update, params: { id: saved_museum.id, museum: { name: nil,
-                                                              description: nil,
+      patch :update, params: { id: saved_museum.id, museum: { name_ru: nil,
+                                                              description_ru: nil,
                                                               photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
