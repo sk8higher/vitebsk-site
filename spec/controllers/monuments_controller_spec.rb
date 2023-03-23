@@ -35,8 +35,10 @@ RSpec.describe MonumentsController do
 
     it 'creates a new monument and redirects to the show page' do
       expect do
-        post :create, params: { monument: { name: created_monument.name,
-                                            description: created_monument.description,
+        post :create, params: { monument: { name_ru: created_monument.name_ru,
+                                            name_en: created_monument.name_en,
+                                            description_ru: created_monument.description_ru,
+                                            description_en: created_monument.description_en,
                                             photo: file } }
       end.to change(Monument, :count).by(1)
       expect(response).to redirect_to(assigns(:monument))
@@ -44,8 +46,8 @@ RSpec.describe MonumentsController do
 
     it 'returns unprocessable_entity if monument is not saved' do
       expect do
-        post :create, params: { monument: { name: nil,
-                                            description: nil,
+        post :create, params: { monument: { name_ru: nil,
+                                            description_ru: nil,
                                             photo: file } }
       end.not_to change(Monument, :count).from(0)
 
@@ -68,17 +70,17 @@ RSpec.describe MonumentsController do
     it 'updates the monument and redirects to the show page' do
       new_description = Faker::Lorem.characters(number: 40)
 
-      patch :update, params: { id: saved_monument.id, monument: { name: Faker::Lorem.characters(number: 40),
-                                                                  description: new_description,
+      patch :update, params: { id: saved_monument.id, monument: { name_ru: Faker::Lorem.characters(number: 40),
+                                                                  description_ru: new_description,
                                                                   photo: file } }
       expect(response).to redirect_to(assigns(:monument))
       saved_monument.reload
-      expect(saved_monument.description).to eq(new_description)
+      expect(saved_monument.description_ru).to eq(new_description)
     end
 
     it 'returns unprocessable entity if building is not updated' do
-      patch :update, params: { id: saved_monument.id, monument: { name: nil,
-                                                                  description: nil,
+      patch :update, params: { id: saved_monument.id, monument: { name_ru: nil,
+                                                                  description_ru: nil,
                                                                   photo: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
