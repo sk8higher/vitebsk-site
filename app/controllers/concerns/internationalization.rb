@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Internationalization
   extend ActiveSupport::Concern
 
@@ -31,7 +33,9 @@ module Internationalization
         quality = quality ? quality.to_f : 1.0
         [locale, quality]
       end.reject do |(locale, quality)|
+        # rubocop:disable Style/NumericPredicate
         locale == '*' || quality == 0
+        # rubocop:enable Style/NumericPredicate
       end.sort_by do |(_, quality)|
         quality
       end.map(&:first)
@@ -48,13 +52,17 @@ module Internationalization
       end
     end
 
+    # rubocop:disable Naming/MethodParameterName
     def match?(s1, s2)
+      # rubocop:disable Style/NumericPredicate
       s1.to_s.casecmp(s2.to_s) == 0
+      # rubocop:enable Style/NumericPredicate
     end
+    # rubocop:enable Naming/MethodParameterName
 
     def default_url_options
       { locale: I18n.locale }
     end
   end
-  # rubcop:enable Metrics/BlockLength
+  # rubocop:enable Metrics/BlockLength
 end
