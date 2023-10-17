@@ -9,6 +9,7 @@ ru:
       monuments_link: 'Памятники Витебска'
       museums_link: 'Музеи Витебска'
       famous_people_link: 'Известные люди Витебщины'
+      articles_link: 'Мой город - мой колледж'
     admin_panel:
       destroy_session: 'Выйти'
       new_session: 'Вход для администратора'
