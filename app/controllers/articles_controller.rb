@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
@@ -5,8 +7,7 @@ class ArticlesController < ApplicationController
     @pagy, @articles = pagy(Article.all.order(created_at: :desc), items: 8)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @article = Article.new
@@ -45,6 +46,6 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(I18n.available_locales.map do |l|
       [:"name_#{Mobility.normalize_locale(l)}", :"description_#{Mobility.normalize_locale(l)}"]
-    end.flatten, :images)
+    end.flatten, images: [])
   end
 end
