@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      article: 'Article'
+    attributes:
+      article:
+        name: 'Name'
+        name_en: 'Name (English)'
+        name_ru: 'Name (Russian)'
+        photo: 'Photo'

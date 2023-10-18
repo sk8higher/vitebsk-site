@@ -1,0 +1,49 @@
+<%= render 'shared/header' %>
+
+<p class="notice"><%= notice %></p>
+
+<div class="container d-flex flex-column align-items-center card-cont blue-index-text">
+  <h1 class="text-center mt-15"><%= @article.name %></h1>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @article.images.each_with_index do |img, index| %>
+        <% div_class = "carousel-item".dup %>
+        <% div_class.concat(" active") if index.zero? %>
+        <%= content_tag :div, class: div_class do %>
+          <%= image_tag img, class: "d-block w-100" %>
+        <% end %>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden"><%= t('.prev_carousel') %></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden"><%= t('.next_carousel') %></span>
+    </button>
+  </div>
+  <div>
+    <% if can? :manage, @article %>
+      <div class="container mt-3 mb-20">
+        <div class="row">
+          <div class="col text-center">
+            <%= link_to t('.edit_this_article'), edit_article_path(@article), class: 'btn btn-light-blue' %>
+            <%= link_to t('.delete_this_article'), @article, data: { 'turbo-method': :delete, 'turbo-confirm': t('.delete_confirmation') }, class: 'btn btn-danger' %>
+
+            <%= link_to t('.back'), articles_path, class: 'btn btn-outline-dark' %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="container mt-10 mb-20">
+        <div class="row">
+          <div class="col text-center">
+            <%= link_to t('.back'), articles_path, class: 'btn btn-outline-dark' %>
+              </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

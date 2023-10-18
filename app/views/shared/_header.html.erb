@@ -38,6 +38,8 @@
             <li><%= link_to t('header.menu.museums_link'), museums_path, class: 'dropdown-item' %></li>
             <li><hr class="dropdown-divider" /></li>
             <li><%= link_to t('header.menu.famous_people_link'), people_path, class: 'dropdown-item' %></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><%= link_to t('header.menu.articles_link'), articles_path, class: 'dropdown-item' %></li>
           </ul>
         </li>
         <% if user_signed_in? %>

@@ -9,6 +9,7 @@ en:
       monuments_link: 'Monuments in Vitebsk'
       museums_link: 'Museums in Vitebsk'
       famous_people_link: 'Famous people of Vitebsk region'
+      articles_link: 'My city - my college'
     admin_panel:
       destroy_session: 'Log out'
       new_session: 'Admin login'

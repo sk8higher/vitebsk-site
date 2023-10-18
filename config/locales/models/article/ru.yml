@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      article: 'Статья'
+    attributes:
+      monument:
+        name: 'Название'
+        name_en: 'Название (Английский)'
+        name_ru: 'Название (Русский)'
+        photo: 'Фото'

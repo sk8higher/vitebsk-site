@@ -9,10 +9,10 @@ module Internationalization
 
     private
 
-    def switch_locale(&action)
+    def switch_locale(&)
       locale = locale_from_url || locale_from_headers || I18n.default_locale
       response.set_header('Content-Language', locale)
-      I18n.with_locale locale, &action
+      I18n.with_locale(locale, &)
     end
 
     def locale_from_url
@@ -44,9 +44,7 @@ module Internationalization
 
       if I18n.enforce_available_locales
         locale = locales.reverse.find { |locale| I18n.available_locales.any? { |al| match?(al, locale) } }
-        if locale
-          I18n.available_locales.find { |al| match?(al, locale) }
-        end
+        I18n.available_locales.find { |al| match?(al, locale) } if locale
       else
         locales.last
       end
