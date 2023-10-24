@@ -23,6 +23,8 @@
       <span class="visually-hidden"><%= t('.next_carousel') %></span>
     </button>
   </div>
+  <p class="mt-15 text-justify"><%= sanitize @article.description, tags: %w(strong em a code pre h2 h3 p blockquote ul ol li br) %></p>
+
   <div>
     <% if can? :manage, @article %>
       <div class="container mt-3 mb-20">
@@ -40,7 +42,7 @@
         <div class="row">
           <div class="col text-center">
             <%= link_to t('.back'), articles_path, class: 'btn btn-outline-dark' %>
-              </div>
+          </div>
         </div>
       </div>
     <% end %>

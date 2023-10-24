@@ -5,6 +5,7 @@ class Article < ApplicationRecord
   extend Mobility
 
   translates :name, type: :string, column_fallback: %i[ru]
+  translates :description, type: :string, column_fallback: %i[ru]
 
   has_many_attached :images
 
