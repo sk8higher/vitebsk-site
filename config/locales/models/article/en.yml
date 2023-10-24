@@ -7,4 +7,7 @@ en:
         name: 'Name'
         name_en: 'Name (English)'
         name_ru: 'Name (Russian)'
+        description: 'Description'
+        description_en: 'Description (English)'
+        description_ru: 'Description  (Russian)'
         photo: 'Photo'
