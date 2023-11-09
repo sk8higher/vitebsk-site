@@ -13,7 +13,7 @@ module VitebskSite
     config.active_storage.variable_content_type = %w(image/png image/jpg image/jpeg)
     config.active_storage.silence_invalid_content_types_warning = true
 
-    config.i18n.available_locales = %i[ru en]
+    config.i18n.available_locales = %i[ru en be]
     config.i18n.default_locale = :ru
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
