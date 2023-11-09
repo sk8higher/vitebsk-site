@@ -79,7 +79,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov', '~> 0.17'
   gem 'simplecov-lcov', '~> 0.8.0'
-  gem 'webdrivers'
 end
 
 # Auth
