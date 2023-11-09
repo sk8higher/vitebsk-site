@@ -16,6 +16,12 @@
       <%= form.label name %>
       <%= form.text_field name, class: 'form-control' %>
     </div>
+
+    <div class="form-group row mb-15">
+      <% description = "description_#{Mobility.normalize_locale(locale)}" %>
+      <%= form.label description %>
+      <%= form.text_area description, rows: 10, class: 'form-control' %>
+    </div>
   <% end %>
 
   <div class="form-group row mb-15">

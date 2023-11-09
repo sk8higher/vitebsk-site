@@ -10,7 +10,6 @@ gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -97,3 +96,5 @@ gem 'rubocop-rspec', require: false
 gem 'rails-i18n', '~> 7.0', '>= 7.0.6'
 
 gem 'mobility', '~> 1.2', '>= 1.2.9'
+
+gem "pg", "~> 1.5"

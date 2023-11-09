@@ -5,7 +5,7 @@ en:
       buttons:
         new_article: 'New article'
         go_to_home: 'Home'
-        visit_artwork: 'Visit'
+        visit_article: 'Visit'
     edit:
       main_text: 'Change information about the article'
       save: 'Save'

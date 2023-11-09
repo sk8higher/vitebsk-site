@@ -29,6 +29,7 @@
         <%= image_tag article.images.first, class: 'card-img-top' %>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title"><%= article.name %></h5>
+          <p class="card-text"><%= truncate strip_tags(article.description), length: 160 %></p>
           <%= link_to t('.buttons.visit_article'), article_path(article), class: 'btn btn-light-blue mt-auto align-self-start' %>
         </div>
       </div>
@@ -37,5 +38,5 @@
 </div>
 
 <div class="container d-flex justify-content-center mt-30">
-  <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>
+  <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy}if @pagy.pages > 1 %>
 </div>
