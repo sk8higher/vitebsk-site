@@ -79,7 +79,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov', '~> 0.17'
   gem 'simplecov-lcov', '~> 0.8.0'
-  gem 'webdrivers'
 end
 
 # Auth
@@ -98,3 +97,4 @@ gem 'rails-i18n', '~> 7.0', '>= 7.0.6'
 gem 'mobility', '~> 1.2', '>= 1.2.9'
 
 gem "pg", "~> 1.5"
+gem 'sqlite3'

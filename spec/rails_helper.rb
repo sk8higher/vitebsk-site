@@ -4,7 +4,6 @@
 require 'spec_helper'
 require_relative './support/factory_bot'
 require 'capybara/rspec'
-require 'webdrivers'
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
