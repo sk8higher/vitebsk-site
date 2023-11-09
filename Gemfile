@@ -97,3 +97,4 @@ gem 'rails-i18n', '~> 7.0', '>= 7.0.6'
 gem 'mobility', '~> 1.2', '>= 1.2.9'
 
 gem "pg", "~> 1.5"
+gem 'sqlite3'

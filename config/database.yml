@@ -10,7 +10,10 @@ development:
 
 test:
   <<: *default
-  database: vitebsk-site_test
+  adapter: sqlite3
+  pool: 50
+  timeout: 100000
+  database: db/test.sqlite3
 
 production:
   <<: *default
