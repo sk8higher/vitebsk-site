@@ -1,7 +1,9 @@
 # Витебск - мой город
 [![Coverage Status](https://coveralls.io/repos/github/sk8higher/vitebsk-site/badge.svg?branch=main)](https://coveralls.io/github/sk8higher/vitebsk-site?branch=main)
 
-[Деплой на fly.io](https://vitebsk-site.fly.dev/)
+[Деплой на fly.io](https://vitebsk-site.fly.dev/) (outdated)
+
+[Деплой на Render](https://vitebsk-site.onrender.com/)
 
 ---
 
