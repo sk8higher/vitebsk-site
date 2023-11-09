@@ -10,4 +10,4 @@ en:
         description: 'Description'
         description_en: 'Description (English)'
         description_ru: 'Description  (Russian)'
-        photo: 'Photo'
+        images: 'Photo'
