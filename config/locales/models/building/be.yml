@@ -1,0 +1,15 @@
+be:
+  activerecord:
+    models:
+      building: 'Месца'
+    attributes:
+      building:
+        name: 'Назва'
+        name_en: 'Назва (Англійская)'
+        name_ru: 'Назва (Руская)'
+        name_be: 'Назва (Беларуская)'
+        description: 'Апicанне'
+        description_en: 'Апісанне (Англійская)'
+        description_ru: 'Апісанне (Руская)'
+        description_be: 'Апісанне (Беларуская)'
+        photo: 'Фота'

@@ -1,0 +1,15 @@
+be:
+  activerecord:
+    models:
+      article: 'Артыкул'
+    attributes:
+      article:
+        name: 'Назва'
+        name_en: 'Назва (Англійская)'
+        name_ru: 'Назва (Руская)'
+        name_be: 'Назва (Беларуская)'
+        description: 'Змест'
+        description_en: 'Змест (Англійская)'
+        description_ru: 'Змест (Руская)'
+        description_be: 'Змест (Беларуская)'
+        images: 'Фота'

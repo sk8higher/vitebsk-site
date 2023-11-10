@@ -1,0 +1,15 @@
+be:
+  activerecord:
+    models:
+      artwork: "Праца"
+    attributes:
+      artwork:
+        title: "Назва"
+        title_en: "Назва (Англійская)"
+        title_ru: "Назва (Руская)"
+        title_be: "Назва (Беларуская)"
+        description: "Апісанне"
+        description_en: "Апісанне (Англійская)"
+        description_ru: "Апісанне (Руская)"
+        description_be: "Апісанне (Беларуская)"
+        photo: "Фота"
