@@ -1,0 +1,31 @@
+be:
+  people:
+    index:
+      main_text: 'Вядомыя людзі Віцебшчыны'
+      buttons:
+        new_article: 'Новы артыкул пра чалавека'
+        go_to_home: 'На галоўную'
+        visit_article: 'Паглядзець'
+        filter:
+          show_all: 'Паказаць усіх'
+          show_artists: 'Паказаць мастакоў'
+          show_musicians: 'Паказаць музыкаў'
+          show_writers: 'Паказаць пісьменнікаў'
+    edit:
+      main_text: 'Змяніць інфармацыю аб чалавеку'
+      save: 'Захаваць'
+      back: 'Назад'
+    new:
+      main_text: 'Новы артыкул пра чалавека'
+      create_article: 'Стварыць артыкул'
+      back: 'Назад'
+    show:
+      edit_this_article: 'Адрэдагаваць артыкул'
+      delete_this_article: 'Выдаліць артыкул'
+      delete_confirmation: 'Вы ўпэўнены?'
+      back: 'Назад'
+      artworks:
+        show_artworks: 'Паказаць працы'
+        add_artwork: 'Дадаць працу'
+    form:
+      errors: 'Памылкі:'

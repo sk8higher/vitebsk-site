@@ -1,0 +1,25 @@
+ru:
+  artworks:
+    index:
+      main_text: ": працы"
+      buttons:
+        new_artwork: "Новая праца"
+        go_to_home: "На галоўную"
+        back_to_person: "Вярнуцца на старонку аўтара"
+        visit_artwork: "Паглядзець"
+    edit:
+      main_text: "Змяніць інфармацыю аб працы"
+      save: "Захаваць"
+      back: "Назад"
+    new:
+      main_text: "Новая праца"
+      create_article: "Стварыць працу"
+      back: "Назад"
+    show:
+      edit_this_article: "Адрэдагаваць працу"
+      delete_this_article: "Выдаліць працу"
+      delete_confirmation: "Вы ўпэўнены?"
+      back: "Назад"
+      back_to_person: "Вярнуцца на старонку аўтара"
+    form:
+      errors: "Памылкі:"

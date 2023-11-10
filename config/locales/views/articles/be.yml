@@ -1,0 +1,25 @@
+be:
+  articles:
+    index:
+      main_text: 'Наш каледж'
+      buttons:
+        new_article: 'Новы артыкул аб каледжы'
+        go_to_home: 'На галоўную'
+        visit_article: 'Паглядзець'
+    edit:
+      main_text: 'Змяніць артыкул аб каледжы'
+      save: 'Захаваць'
+      back: 'Назад'
+    new:
+      main_text: 'Новы артыкул аб каледжы'
+      create_article: 'Стварыць артыкул'
+      back: 'Назад'
+    show:
+      edit_this_article: 'Адрэдагаваць артыкул'
+      delete_this_article: 'Выдаліць артыкул'
+      delete_confirmation: 'Вы ўпэўнены?'
+      back: 'Назад'
+    form:
+      errors: 'Памылкі:'
+
+
