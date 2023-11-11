@@ -1,6 +1,6 @@
 <%= form_with(model: article, data: { turbo: false }, class: 'form-width-avg') do |form| %>
   <% if article.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= t('.errors') %></h2>
       <ul>
         <% article.errors.each do |error| %>
