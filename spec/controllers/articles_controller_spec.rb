@@ -37,8 +37,10 @@ RSpec.describe ArticlesController do
       expect do
         post :create, params: { article: { name_ru: created_article.name_ru,
                                           name_en: created_article.name_en,
+                                          name_be: created_article.name_be,
                                           description_ru: created_article.description_ru,
                                           description_en: created_article.description_en,
+                                          description_be: created_article.description_be,
                                           images: [file] } }
       end.to change(Article, :count).by(1)
       expect(response).to redirect_to(assigns(:article))
