@@ -8,7 +8,7 @@ class PeopleController < ApplicationController
     if params[:tag_id]
       @pagy, @people = pagy(Person.where(tag_id: params[:tag_id]).order(created_at: :desc), items: 8)
     else
-      @pagy, @people = pagy(Person.all.order(created_at: :desc), items: 8)
+      @pagy, @people = pagy(Person.order(created_at: :desc), items: 8)
     end
   end
 

@@ -36,12 +36,12 @@ RSpec.describe ArticlesController do
     it 'creates a new article and redirects to the show page' do
       expect do
         post :create, params: { article: { name_ru: created_article.name_ru,
-                                          name_en: created_article.name_en,
-                                          name_be: created_article.name_be,
-                                          description_ru: created_article.description_ru,
-                                          description_en: created_article.description_en,
-                                          description_be: created_article.description_be,
-                                          images: [file] } }
+                                           name_en: created_article.name_en,
+                                           name_be: created_article.name_be,
+                                           description_ru: created_article.description_ru,
+                                           description_en: created_article.description_en,
+                                           description_be: created_article.description_be,
+                                           images: [file] } }
       end.to change(Article, :count).by(1)
       expect(response).to redirect_to(assigns(:article))
     end
@@ -49,8 +49,8 @@ RSpec.describe ArticlesController do
     it 'returns unprocessable_entity if article is not saved' do
       expect do
         post :create, params: { article: { name_ru: nil,
-                                          description_ru: nil,
-                                          images: file } }
+                                           description_ru: nil,
+                                           images: file } }
       end.not_to change(Article, :count).from(0)
 
       expect(response).to have_http_status(:unprocessable_entity)
@@ -73,8 +73,8 @@ RSpec.describe ArticlesController do
       new_description = Faker::Lorem.characters(number: 40)
 
       patch :update, params: { id: saved_article.id, article: { name_ru: Faker::Lorem.characters(number: 40),
-                                                               description_ru: new_description,
-                                                               images: file } }
+                                                                description_ru: new_description,
+                                                                images: file } }
       expect(response).to redirect_to(assigns(:article))
       saved_article.reload
       expect(saved_article.description_ru).to eq(new_description)
@@ -82,8 +82,8 @@ RSpec.describe ArticlesController do
 
     it 'returns unprocessable entity if article is not updated' do
       patch :update, params: { id: saved_article.id, article: { name_ru: nil,
-                                                               description_ru: nil,
-                                                               images: file } }
+                                                                description_ru: nil,
+                                                                images: file } }
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response).to render_template(:edit)

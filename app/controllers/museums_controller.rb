@@ -4,7 +4,7 @@ class MuseumsController < ApplicationController
   before_action :set_museum, only: %i[show edit update destroy]
 
   def index
-    @pagy, @museums = pagy(Museum.all.order(created_at: :desc), items: 8)
+    @pagy, @museums = pagy(Museum.order(created_at: :desc), items: 8)
   end
 
   def show; end
