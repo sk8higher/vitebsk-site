@@ -1,0 +1,6 @@
+be:
+  log_in: 'Увайсці'
+  back: 'Назад'
+  form:
+    email: 'Email'
+    password: 'Пароль'

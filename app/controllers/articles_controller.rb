@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.images.attach(params[:article][:images]) if params[:article][:images].present?
 
     if @article.save
       redirect_to article_path(@article), notice: t('notice.create.success')
@@ -25,6 +26,8 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      @article.images.attach(params[:article][:images]) if params[:article][:images].present?
+
       redirect_to article_path(@article), notice: t('notice.update.success')
     else
       render :edit, status: :unprocessable_entity
@@ -46,6 +49,6 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(I18n.available_locales.map do |l|
       [:"name_#{Mobility.normalize_locale(l)}", :"description_#{Mobility.normalize_locale(l)}"]
-    end.flatten, images: [])
+    end.flatten, :images)
   end
 end

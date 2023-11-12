@@ -1,6 +1,7 @@
 en:
   en: 'English'
   ru: 'Russian'
+  be: 'Belarusian'
   notice:
     create:
       success: 'The article was successfully created.'

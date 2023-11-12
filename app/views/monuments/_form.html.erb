@@ -1,6 +1,6 @@
 <%= form_with(model: monument, data: { turbo: false }, class: 'form-width-avg') do |form| %>
   <% if monument.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= t('.errors') %></h2>
       <ul>
         <% monument.errors.each do |error| %>

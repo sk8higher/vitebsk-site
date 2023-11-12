@@ -1,0 +1,15 @@
+be:
+  activerecord:
+    models:
+      person: "Чалавек"
+    attributes:
+      person:
+        name: "Імя"
+        name_en: "Імя (Англійская)"
+        name_ru: "Імя (Руская)"
+        name_be: "Імя (Беларуская)"
+        bio: "Біяграфія"
+        bio_en: "Біяграфія (Англійская)"
+        bio_ru: "Біяграфія (Руская)"
+        bio_be: "Біяграфія (Беларуская)"
+        photo: "Фота"

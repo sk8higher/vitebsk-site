@@ -1,0 +1,16 @@
+be:
+  header:
+    brand_name: 'Віцебск - мой горад'
+    alt_icon_text: 'Васілёк'
+    home_link: 'Галоўная'
+    menu_link: 'Меню'
+    menu:
+      places_link: 'Значныя месцы горада'
+      monuments_link: 'Помнікі Віцебску'
+      museums_link: 'Музеі Віцебска'
+      famous_people_link: 'Вядомыя людзі Віцебшчыны'
+      articles_link: 'Мой горад - мой каледж'
+    admin_panel:
+      destroy_session: 'Выйсці'
+      new_session: 'Уваход для адміністратара'
+    year_of_peace_alt_text: 'Год міру і стварэння'

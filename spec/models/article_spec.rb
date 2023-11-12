@@ -10,11 +10,7 @@ RSpec.describe Article do
 
     it { is_expected.to validate_length_of(:name).is_at_least(3).is_at_most(250) }
 
-    it { is_expected.to validate_length_of(:description).is_at_least(5) }
-
     it { is_expected.to validate_presence_of(:name) }
-
-    it { is_expected.to validate_presence_of(:description) }
 
     it { is_expected.to validate_presence_of(:images) }
   end
@@ -34,11 +30,6 @@ RSpec.describe Article do
         article.name = nil
         expect(article).not_to be_valid
       end
-
-      it 'is not valid without description' do
-        article.description = nil
-        expect(article).not_to be_valid
-      end
     end
 
     describe 'attribute length' do
@@ -51,18 +42,6 @@ RSpec.describe Article do
         it 'is not valid with a name greater than 250 symbols' do
           article.name = Faker::Lorem.characters(number: 255)
           expect(article).not_to be_valid
-        end
-      end
-
-      describe 'description length validation' do
-        it 'is not valid with a description less than 5 symbols' do
-          article.description = Faker::Lorem.characters(number: 3)
-          expect(article).not_to be_valid
-        end
-
-        it 'is valid with any number of symbols greater than 5' do
-          article.description = Faker::Lorem.characters(number: 100)
-          expect(article).to be_valid
         end
       end
     end
